@@ -56,6 +56,23 @@ SeriesPie::SeriesPie(QChart*chart,QWidget*parent):QGroupBox(parent),mChart(chart
     setTitle(tr("饼图"));
 }
 
+void SeriesPie::updatePie()
+{ // 提供给外部使用,对setCurrentSeries的封装
+    if (mChart->series().count() == 0) {disconnectAllConnections();return;}
+    setCurrentSeries(static_cast<QPieSeries*>(mChart->series().at(0)));
+}
+
+void SeriesPie::disconnectAllConnections()
+{
+    disconnect(mEndAngle,SIGNAL(valueChanged(double)),this,SLOT(changeEndAngle(double)));
+    disconnect(mStartAngle,SIGNAL(valueChanged(double)),this,SLOT(changeStartAngle(double)));
+    disconnect(mHPosition,SIGNAL(valueChanged(double)),this,SLOT(changeHPosition(double)));
+    disconnect(mVPosition,SIGNAL(valueChanged(double)),this,SLOT(changeVPosition(double)));
+    disconnect(mPieSize,SIGNAL(valueChanged(double)),this,SLOT(changePieSize(double)));
+    disconnect(mHoleSize,SIGNAL(valueChanged(double)),this,SLOT(changeHoleSize(double)));
+    disconnect(mLabelPosition,SIGNAL(currentIndexChanged(int)),this,SLOT(changeLabelPosition(int)));
+}
+
 void SeriesPie::updateEndAngleState()
 {
     mEndAngle->setValue(mCurrentSeries->pieEndAngle());
@@ -147,12 +164,6 @@ void SeriesPie::changeLabelPosition(int index)
 void SeriesPie::updateSumState()
 {
     mSum->setText(QString("%1").arg(mCurrentSeries->sum()));
-}
-
-void SeriesPie::updatePie()
-{ // 提供给外部使用,对setCurrentSeries的封装
-    if (mChart->series().count() == 0) return;
-    setCurrentSeries(static_cast<QPieSeries*>(mChart->series().at(0)));
 }
 
 void SeriesPie::setCurrentSeries(QPieSeries *series)

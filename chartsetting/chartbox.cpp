@@ -1,4 +1,4 @@
-#include <chartsetting/chartbox.h>
+#include"chartbox.h"
 
 ChartBox::ChartBox(QChart *chart,const QIcon&icon,QWidget*parent):
     QGroupBox(parent),mChart(chart),mIcon(icon)

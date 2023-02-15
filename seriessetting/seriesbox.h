@@ -16,7 +16,6 @@
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QSpinBox>
-#include <QDebug>
 using namespace QtCharts;
 
 class SeriesBox : public QGroupBox

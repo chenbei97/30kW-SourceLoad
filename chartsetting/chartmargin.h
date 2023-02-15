@@ -5,7 +5,7 @@
 #include <QLabel>
 #include <QSpinBox>
 #include <QPushButton>
-#include <chartsetting/chartbox.h>
+#include "chartbox.h"
 
 class ChartMargin : public ChartBox
 {

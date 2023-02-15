@@ -1,8 +1,8 @@
 #ifndef LINESERIESSETTING_H
 #define LINESERIESSETTING_H
 
-#include <seriessetting/seriessetting.h>
-#include <seriessetting/seriesxy.h>
+#include "seriessetting.h"
+#include "seriesxy.h"
 
 class LineSeriesSetting : public QVBoxLayout
 {

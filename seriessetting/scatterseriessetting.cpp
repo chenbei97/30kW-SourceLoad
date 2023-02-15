@@ -1,4 +1,4 @@
-#include <seriessetting/scatterseriessetting.h>
+#include "scatterseriessetting.h"
 
 ScatterSeriesSetting::ScatterSeriesSetting(QChart*chart):mChart(chart)
 {
@@ -9,7 +9,10 @@ ScatterSeriesSetting::ScatterSeriesSetting(QChart*chart):mChart(chart)
     addWidget(mXYSetting);
     addWidget(mScatterSetting);
 
-    connect(this,&ScatterSeriesSetting::associateCompeleted,mGenericSetting,&SeriesSetting::associateCompeleted);
+    // 导入文件，清空图表和关联表格都会发出该信号，其中导入和清空需要调用disconnectAllConnections
+    connect(this,&ScatterSeriesSetting::associateCompeleted,mGenericSetting,&SeriesSetting::updateGenericSetting);
+    connect(this,&ScatterSeriesSetting::associateCompeleted,mXYSetting,&SeriesXY::updateXY);
+    connect(this,&ScatterSeriesSetting::associateCompeleted,mScatterSetting,&SeriesScatter::updateScatter);
 
     connect(mXYSetting,static_cast<void (SeriesXY::*)(QXYSeries*)>(&SeriesXY::seriesColorChanged),
             this,[=](QXYSeries*series){emit seriesColorChanged(static_cast<QScatterSeries*>(series));});

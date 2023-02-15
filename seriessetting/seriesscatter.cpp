@@ -1,4 +1,4 @@
-#include <seriessetting/seriesscatter.h>
+#include "seriesscatter.h"
 
 SeriesScatter::SeriesScatter(QChart * chart,QWidget* parent):
     QGroupBox(parent),mChart(chart),mCurrentSeries(nullptr),mCurrentSeriesId(0)
@@ -26,6 +26,24 @@ SeriesScatter::SeriesScatter(QChart * chart,QWidget* parent):
     lay->addRow(tr("&标记填充"),mFillColor);
     setTitle(tr("标记"));
     setLayout(lay);
+}
+
+void SeriesScatter::updateScatter()
+{
+    if (!mChart->series().count())
+    {
+        disconnectAllConnections();
+        return;
+    }
+    setCurrentSeries(static_cast<QScatterSeries*>(mChart->series().at(0)),0);
+}
+
+void SeriesScatter::disconnectAllConnections()
+{
+    disconnect(mMarkerShape,SIGNAL(currentIndexChanged(int)),this,SLOT(changeShape(int)));
+    disconnect(mMarkerSize,SIGNAL(valueChanged(double)),this,SLOT(changeSize(double)));
+    disconnect(mBorderColor,&QPushButton::clicked,this,&SeriesScatter::changeBorderColor);
+    disconnect(mFillColor,&QPushButton::clicked,this,&SeriesScatter::changeFillColor);
 }
 
 

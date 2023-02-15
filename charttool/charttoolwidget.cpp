@@ -1,4 +1,4 @@
-#include <charttool/charttoolwidget.h>
+#include "charttoolwidget.h"
 
 ChartToolWidget::ChartToolWidget(QWidget *parent) : QWidget(parent)
 {

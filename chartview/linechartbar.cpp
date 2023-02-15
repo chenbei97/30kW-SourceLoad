@@ -1,4 +1,4 @@
-#include <chartview/linechartbar.h>
+#include "linechartbar.h"
 
 LineChartBar::LineChartBar(QTableView*tableview,QChartView* chartview,QWidget*parent):
     ChartBar(tableview,chartview,parent)

@@ -9,8 +9,8 @@
 #include <QGroupBox>
 #include <QLineEdit>
 #include <QRadioButton>
-#include <messagebox/critical.h>
-#include <chartsetting/gradientparamselectorwidget.h>
+#include "../messagebox/critical.h"
+#include "gradientparamselectorwidget.h"
 
 class GradientParamWidget : public QWidget
 {

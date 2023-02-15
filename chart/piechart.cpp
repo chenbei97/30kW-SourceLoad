@@ -23,14 +23,13 @@ PieChart::PieChart(QTableView * tableview,QWidget *parent)
     mSplitter->addWidget(mChartView);
     mSplitter->addWidget(mToolBox);
     setCentralWidget(mSplitter);
+
     connect(mToolBar,&PieChartBar::associateCompeleted,mToolBox,&PieChartTool::associateCompeleted);
-//    connect(mToolBar,&PieChartBar::modeChanged,mToolBox,&PieChartTool::modeChanged);//来自关联表格方向
-//    connect(this,&PieChart::modeChanged,mToolBox,&PieChartTool::modeChanged);// 来自初始化方向
+    connect(mToolBar,&PieChartBar::modeChanged,mToolBox,&PieChartTool::modeChanged);
     connect(this,&PieChart::associateCompeleted,mToolBox,&PieChartTool::associateCompeleted);
     connect(this,&PieChart::tableChanged,mToolBar,&PieChartBar::tableChanged);
+    connect(mToolBox,&PieChartTool::seriesColorChanged,mToolBar,&PieChartBar::seriesColorChanged);
 
-//    connect(mToolBox,&PieChartTool::seriesColorChanged,mToolBar,&PieChartBar::seriesColorChanged);// 通知关联表格方向
-//    connect(mToolBox,&PieChartTool::seriesColorChanged,this,&PieChart::onSeriesColorChanged); // 工具栏颜色通知初始化方向
 }
 
 void PieChart::initChart()
@@ -46,12 +45,15 @@ void PieChart::initChart()
 
 void PieChart::clearChart()
 {
-
+    if (mChart->axisX()) mChart->removeAxis(mChart->axisX());
+    if (mChart->axisY()) mChart->removeAxis(mChart->axisY());
+    if (mChart->series().count()) mChart->removeAllSeries();
+    emit associateCompeleted(); // 文件导入调用clearChart清空图表还要通知曲线工具栏更改combo
 }
 
 void PieChart::closeChildrenWindows()
 {
-
+    mToolBox->closeChildrenWindows();
 }
 
 

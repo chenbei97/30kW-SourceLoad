@@ -20,6 +20,7 @@ public:
     void updatePie();
 private:
     void updateState();
+    void disconnectAllConnections();
     QChart * mChart;
     QPieSeries * mCurrentSeries;
     QIcon mIcon;

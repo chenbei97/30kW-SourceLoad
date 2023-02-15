@@ -1,4 +1,4 @@
-#include <chart/linechart.h>
+#include "linechart.h"
 
 LineChart::LineChart(QTableView * tableview,QWidget *parent)
     :QMainWindow(parent),mTableView(tableview)
@@ -109,6 +109,10 @@ void LineChart::initMappingChart()
     mSeriesXYColumn[series3] = qMakePair<int,int>(4,5);
 
     mChart->createDefaultAxes();
+    mChart->axisX()->setTitleText("data point");
+    mChart->axisY()->setTitleText("value");
+    mChart->axisX()->setTitleFont(QFont("Times New Roman",12));
+    mChart->axisY()->setTitleFont(QFont("Times New Roman",12));
 
     mTip->mapping(series1);
     mTip->mapping(series2);

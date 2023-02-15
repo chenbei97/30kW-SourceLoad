@@ -1,4 +1,4 @@
-#include <seriessetting/seriesinfo.h>
+#include "seriesinfo.h"
 
 SeriesInfo::SeriesInfo(QChart * chart,QWidget*parent):
     SeriesBox(chart,parent)
@@ -36,7 +36,10 @@ SeriesInfo::SeriesInfo(QChart * chart,QWidget*parent):
 
 void SeriesInfo::updateInfo()
 { // 用于给外部使用,对setCurrentSeries的一层封装
-    if (!mChart->series().count())  return; // empty之后可能还没关联,这个时候没有新的series就不要进行
+    if (!mChart->series().count())  {
+        disconnectAllConnections(); //
+        return; // empty之后可能还没关联,这个时候没有新的series就不要进行
+    }
      setCurrentSeries(mChart->series().at(0),0);// 内部调用updateState()更新
 }
 
@@ -44,8 +47,15 @@ void SeriesInfo::updateState()
 {
     updateTypeState();
     updateVisibilityState();
-    updateVisibilityState();
+    updateOpacityState();
     updateNameState();
+}
+
+void SeriesInfo::disconnectAllConnections()
+{
+    disconnect(mSeriseVisible,&QCheckBox::stateChanged,this,&SeriesInfo::changeVisibility);
+    disconnect(mSeriesOpacity,SIGNAL(valueChanged(double)),this,SLOT(changeOpacity(double)));
+    disconnect(mSeriesNameBtn,&QPushButton::clicked,this,&SeriesInfo::changeName);
 }
 
 void SeriesInfo::updateTypeState()

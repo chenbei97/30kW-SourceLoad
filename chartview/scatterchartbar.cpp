@@ -1,4 +1,4 @@
-#include <chartview/scatterchartbar.h>
+#include "scatterchartbar.h"
 
 ScatterChartBar::ScatterChartBar(QTableView*tableview,QChartView* chartview,QWidget*parent):
     ChartBar(tableview,chartview,parent)

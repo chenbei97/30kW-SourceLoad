@@ -1,4 +1,4 @@
-#include <charttool/barcharttool.h>
+#include "barcharttool.h"
 
 BarChartTool::BarChartTool(QChart* chart,QWidget*parent)
     :ChartTool(chart,parent)

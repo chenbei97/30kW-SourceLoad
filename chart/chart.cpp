@@ -1,4 +1,4 @@
-#include <chart/chart.h>
+#include "chart.h"
 
 Chart::Chart(QGraphicsItem *parent, Qt::WindowFlags flags)
     : QChart(QChart::ChartTypeCartesian, parent, flags) // 笛卡尔坐标系

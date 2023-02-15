@@ -1,4 +1,4 @@
-#include <axissetting/axislabel.h>
+#include "axislabel.h"
 
 AxisLabel::AxisLabel(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*parent):
     AxisBox(chart,axis,icon,parent)
@@ -33,6 +33,13 @@ AxisLabel::AxisLabel(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget
     setLayout(lay);
 }
 
+void AxisLabel::disconnectAllConnections()
+{
+    disconnect(mAxisLabelVisibility,&QCheckBox::stateChanged,this,&AxisLabel::changeVisibility);
+    disconnect(mAxisLabelAngle,SIGNAL(valueChanged(double)),this,SLOT(changeAngle(double)));
+    disconnect(mAxisLabelColor,&QPushButton::clicked,this,&AxisLabel::changeColor);
+    disconnect(mAxisLabelFont,&QPushButton::clicked,this,&AxisLabel::changeFont);
+}
 
 void AxisLabel::updateState()
 {

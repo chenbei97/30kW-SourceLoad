@@ -4,11 +4,10 @@
 #include <QFormLayout>
 #include <QGroupBox>
 #include <QComboBox>
-#include <chartsetting/lineargradientparamwidget.h>
-#include <chartsetting/radialgradientparamwidget.h>
-#include <chartsetting/conicalgradientparamwidget.h>
-
 #include <QtCharts>
+#include "lineargradientparamwidget.h"
+#include "radialgradientparamwidget.h"
+#include "conicalgradientparamwidget.h"
 using namespace QtCharts;
 
 class BackgroundAreaGradient : public QGroupBox

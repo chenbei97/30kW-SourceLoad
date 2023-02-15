@@ -1,4 +1,4 @@
-#include <chartview/associatexyaxis.h>
+#include "associatexyaxis.h"
 
 AssociateXYAxis::AssociateXYAxis(QWidget*parent):QGroupBox(parent)
 {

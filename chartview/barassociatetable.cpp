@@ -1,4 +1,4 @@
-#include <chartview/barassociatetable.h>
+#include "barassociatetable.h"
 
 BarAssociateTable::BarAssociateTable(QTableView*tableview,QChartView*chartview,QWidget*parent):
     QDialog(parent),mTableView(tableview),mChartView(chartview)
@@ -97,7 +97,6 @@ QBarSet * BarAssociateTable::createSet()
         if (!mTableModel->isRowDataValid(row)) return nullptr ;
         data = mTableModel->rowData(row);
 
-        //qDebug()<<"row data = "<<data;
         mTableModel->addRowMapping(row,mSeries->barcolor());
         mAssociateMode = AssociateMode::RowMode;
         emit modeChanged(AssociateMode::RowMode,row);
@@ -107,7 +106,6 @@ QBarSet * BarAssociateTable::createSet()
         if (!mTableModel->isColumnDataValid(col)) return nullptr ;
         data = mTableModel->colData(col);
 
-        //qDebug()<<"col data = "<<data;
         mTableModel->addColMapping(col,mSeries->barcolor());
         mAssociateMode = AssociateMode::ColMode;
         emit modeChanged(AssociateMode::ColMode,col);
@@ -120,6 +118,7 @@ QBarSet * BarAssociateTable::createSet()
     set->setColor(mSeries->barcolor());
     set->setBorderColor(mSeries->barcolor());
     set->setLabelColor(mSeries->barcolor());
+
     for(int x = 0; x <data.count(); ++x) {
         if (data[x].isValid()) set->append(data[x].toDouble());
     }
@@ -128,19 +127,16 @@ QBarSet * BarAssociateTable::createSet()
 
 void BarAssociateTable::rcMapping()
 {
-    auto series = createSeries();
     auto set = createSet();
-
     if (set == nullptr || set->count() == 0) {
         // 可能是空白行列,或者全0/字符行列, 数据无效无法绘制系列
         accept();
         return;
     }
 
+    auto series = createSeries();
     series->append(set);
     mChartView->chart()->addSeries(series);
-
-    //mSeriesXYColumn[series] = qMakePair<int,int>(col,-1);
 
     setAxisX(series,rcCategories());
     setAxisY(series);
@@ -218,8 +214,6 @@ void BarAssociateTable::createRowRegionMapping(QBarSeries*series)
     // 那么序列3其实对应的就是第6行,所以切换序列根据index+firstRow(3)即可得到当前序列的实际行位置
     mAssociateMode = AssociateMode::RowRegionMode;
     mRegionFlagCount = {params.startColumn,params.columnCount};// 行区域模式会返回指定的行,但是还需要起始列和列数才能确定映射的行范围
-//    qDebug()<<"（1）行区域模式,发送的firstRow为 "<<params.firstRow<<", 保存的起始列为"<<params.startColumn
-//           <<",保存的映射列数为"<<params.columnCount;
     emit modeChanged(AssociateMode::RowRegionMode,params.firstRow);
 }
 

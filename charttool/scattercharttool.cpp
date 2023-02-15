@@ -1,4 +1,4 @@
-#include  <charttool/scattercharttool.h>
+#include  "scattercharttool.h"
 
 ScatterChartTool::ScatterChartTool(QChart* chart,QWidget*parent)
     :ChartTool(chart,parent)

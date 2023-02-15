@@ -1,9 +1,9 @@
 #ifndef GRADIENTPARAMSELECTOR_H
 #define GRADIENTPARAMSELECTOR_H
 
-#include <chartsetting/colorbutton.h>
 #include <QLabel>
 #include <QVBoxLayout>
+#include "colorbutton.h"
 
 class GradientParamSelector : public QWidget
 {

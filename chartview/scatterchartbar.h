@@ -1,8 +1,8 @@
 #ifndef SCATTERCHARTBAR_H
 #define SCATTERCHARTBAR_H
 
-#include <chartview/chartbar.h>
-#include <chartview/scatterassociatetable.h>
+#include "chartbar.h"
+#include "scatterassociatetable.h"
 
 class ScatterChartBar : public ChartBar
 {
@@ -15,5 +15,4 @@ signals:
     void seriesColorChanged(QScatterSeries*);
     void seriesRemoved(QScatterSeries*);
 };
-
 #endif // SCATTERCHARTBAR_H

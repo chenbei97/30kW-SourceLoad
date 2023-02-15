@@ -1,4 +1,4 @@
-#include <chartview/scatterassociatetable.h>
+#include "scatterassociatetable.h"
 
 ScatterAssociateTable::ScatterAssociateTable(QTableView*tableview,QChartView*chartview,QWidget*parent):
     QDialog(parent),mTableView(tableview),mChartView(chartview)

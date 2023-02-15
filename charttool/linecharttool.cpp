@@ -1,4 +1,4 @@
-#include <charttool/linecharttool.h>
+#include "linecharttool.h"
 
 LineChartTool::LineChartTool(QChart* chart,QWidget*parent)
     :ChartTool(chart,parent)

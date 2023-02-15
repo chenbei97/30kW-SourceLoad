@@ -21,6 +21,7 @@ public:
     void updateAssociateMode(int,int);
 private:
     void updateState();
+    void disconnectAllConnections();
     QChart * mChart;
     QBarSeries * mCurrentSeries;
     QIcon mIcon;

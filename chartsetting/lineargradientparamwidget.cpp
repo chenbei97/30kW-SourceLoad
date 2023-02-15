@@ -1,4 +1,4 @@
-#include <chartsetting/lineargradientparamwidget.h>
+#include "lineargradientparamwidget.h"
 
 LinearGradientParamWidget ::LinearGradientParamWidget(QWidget*parent):
     GradientParamWidget (QGradient::LinearGradient,parent)

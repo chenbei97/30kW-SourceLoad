@@ -1,4 +1,4 @@
-#include <chart/chartshowtip.h>
+#include "chartshowtip.h"
 
 ChartShowTip::ChartShowTip(QObject*parent):QObject(parent)
 {

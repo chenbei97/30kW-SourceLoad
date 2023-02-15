@@ -20,7 +20,6 @@ public:
     void closeChildrenWindows();
 private:
     void initChart();
-    //void onSeriesColorChanged(QPieSeries*,QColor,int);
     QSplitter * mSplitter;
     Chart * mChart;
     QPieSeries * mCurrentSeries;
@@ -34,7 +33,6 @@ private:
     PieChartTool * mToolBox;
 signals:
     void tableChanged();
-    void modeChanged(int,int);
     void associateCompeleted();
 };
 

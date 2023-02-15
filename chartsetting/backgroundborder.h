@@ -6,7 +6,7 @@
 #include <QComboBox>
 #include <QFormLayout>
 #include <QListWidget>
-#include <QtCharts/QChart>
+#include <QChart>
 using namespace QtCharts;
 
 class BackgroundBorder : public QWidget

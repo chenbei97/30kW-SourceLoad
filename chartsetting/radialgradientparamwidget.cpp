@@ -1,4 +1,4 @@
-#include <chartsetting/radialgradientparamwidget.h>
+#include "radialgradientparamwidget.h"
 
 RadialGradientParamWidget::RadialGradientParamWidget(QWidget*parent)
     :GradientParamWidget (QGradient::RadialGradient,parent)

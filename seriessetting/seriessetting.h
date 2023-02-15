@@ -1,7 +1,7 @@
 #ifndef SERIESSETTING_H
 #define SERIESSETTING_H
 
-#include <seriessetting/seriesinfo.h>
+#include "seriesinfo.h"
 
 class SeriesSetting : public QVBoxLayout
 { // 通用曲线设置
@@ -9,6 +9,7 @@ class SeriesSetting : public QVBoxLayout
 public:
     explicit SeriesSetting(QChart*);
     void closeChildrenWindows();
+    void updateGenericSetting();
 private:
     QChart * mChart;
     QAbstractSeries * mCurrentSeries;
@@ -20,7 +21,6 @@ private:
 private slots:
     void onNameChanged(const QString&,int);
 signals:
-    void associateCompeleted();
     void seriesToggled(int);
     void seriesRemoved(int);
     void seriesRemoved(QAbstractSeries*);

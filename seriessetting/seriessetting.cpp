@@ -1,4 +1,4 @@
-#include <seriessetting/seriessetting.h>
+#include "seriessetting.h"
 
 SeriesSetting::SeriesSetting(QChart*chart): mChart(chart),mCurrentSeries(nullptr)
 {
@@ -13,17 +13,19 @@ SeriesSetting::SeriesSetting(QChart*chart): mChart(chart),mCurrentSeries(nullptr
     addWidget(mWhichSeries);
     addWidget(mSeriesInfo);
 
-    connect(this,&SeriesSetting::associateCompeleted,this,[=]{ //关联表格完成要更新当前拥有的曲线
-        mCurrentSeriesCombo->clear(); // clear会发出currentIndexChanged信号
-        if (!mChart->series().count())  return; // 清除所有曲线时会导致at(0)越界,提前返回
-
-        mCurrentSeries=mChart->series().at(0);
-        foreach(QAbstractSeries* series, mChart->series())
-            mCurrentSeriesCombo->addItem(series->name()); // addItem也会发出currentIndexChanged信号
-    });
-
     connect(mSeriesInfo,SIGNAL(nameChanged(const QString&,int)), //曲线改名要让选择曲线的combo同步更改
             this,SLOT(onNameChanged(const QString&,int)));
+}
+
+void SeriesSetting::updateGenericSetting()
+{
+    mCurrentSeriesCombo->clear(); // clear会发出currentIndexChanged信号
+
+    if (!mChart->series().count())  {mSeriesInfo->disconnectAllConnections();return;} // 清除所有曲线时会导致at(0)越界,提前返回
+
+    mCurrentSeries=mChart->series().at(0);
+    foreach(QAbstractSeries* series, mChart->series())
+        mCurrentSeriesCombo->addItem(series->name()); // addItem也会发出currentIndexChanged信号
 }
 
 void SeriesSetting::initWhichSeries()

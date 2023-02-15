@@ -1,11 +1,12 @@
 #ifndef CONICALGRADIENTPARAMWIDGET_H
 #define CONICALGRADIENTPARAMWIDGET_H
 
-#include <chartsetting/gradientparamwidget.h>
-#include <chartsetting/gradientparamspinbox.h>
 #include <QCheckBox>
 #include <QFormLayout>
 #include <QPair>
+#include "gradientparamwidget.h"
+#include "gradientparamspinbox.h"
+
 class ConicalGradientParamWidget : public GradientParamWidget
 {
     Q_OBJECT

@@ -1,4 +1,4 @@
-#include <axissetting/axisvalue.h>
+#include "axisvalue.h"
 
 AxisValue::AxisValue(QChart * chart,QWidget*parent):
     QGroupBox(parent),mChart(chart),mCurrentAxis(nullptr)
@@ -33,6 +33,15 @@ AxisValue::AxisValue(QChart * chart,QWidget*parent):
     setLayout(lay); // 布局不影响先初始化完毕
     setMinimumWidth(450); // 跟随axisbox.cpp
     setTitle(tr("线性轴"));
+}
+
+void AxisValue::disconnectAllConnections()
+{
+    disconnect(mMinRange,SIGNAL(valueChanged(double)),this,SLOT(changeMin(double)));
+    disconnect(mMaxRange,SIGNAL(valueChanged(double)),this,SLOT(changeMax(double)));
+    disconnect(mTickCount,SIGNAL(valueChanged(int)),this,SLOT(changeTickCount(int)));
+    disconnect(mMinorTickCount,SIGNAL(valueChanged(int)),this,SLOT(changeMinorTickCount(int)));
+    disconnect(mLabelFormatBtn,SIGNAL(clicked()),this,SLOT(changeLabelFormat()));
 }
 
 void AxisValue::setCurrentAxis(QValueAxis * axis)

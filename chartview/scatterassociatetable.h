@@ -3,12 +3,12 @@
 
 #include <QDialog>
 #include <QLegendMarker>
-#include <chart/chartshowtip.h>
-#include <chart/chartshowlegend.h>
-#include <chartview/associatexyaxis.h>
-#include <chartview/associatexymode.h>
-#include <chartview/associatexyseries.h>
 #include <QVXYModelMapper>
+#include "../chart/chartshowtip.h"
+#include "../chart/chartshowlegend.h"
+#include "associatexyaxis.h"
+#include "associatexymode.h"
+#include "associatexyseries.h"
 
 class ScatterAssociateTable : public QDialog
 {
@@ -38,5 +38,4 @@ signals:
     void seriesColorChanged(QScatterSeries*);
     void seriesRemoved(QScatterSeries*);
 };
-
 #endif // SCATTERASSOCIATETABLE_H

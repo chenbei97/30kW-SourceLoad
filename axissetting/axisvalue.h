@@ -20,6 +20,7 @@ public:
     void setCurrentAxis(QValueAxis*);
     QValueAxis* currentAxis() const;
     void updateState();
+    void disconnectAllConnections();
 private:
     QChart * mChart;
     QValueAxis * mCurrentAxis;

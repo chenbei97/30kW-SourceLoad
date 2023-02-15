@@ -13,7 +13,7 @@ private:
     PieSeriesSetting * mSeriesSetting;
 signals:
     void modeChanged(int,int);
-    void seriesColorChanged(QPieSeries*,QColor,int);
+    void seriesColorChanged(QColor,int);
 };
 
 #endif // PIECHARTTOOL_H

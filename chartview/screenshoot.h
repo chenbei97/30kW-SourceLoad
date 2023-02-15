@@ -15,7 +15,7 @@
 #include <QSpinBox>
 #include <QDateTime>
 #include <QFormLayout>
-#include <chartview/chartview.h>
+#include "../chartview/chartview.h"
 
 class ScreenShoot : public QDialog
 {
@@ -25,5 +25,4 @@ public:
 private:
     QChartView * mChartView;
 };
-
 #endif // SCREENSHOOT_H

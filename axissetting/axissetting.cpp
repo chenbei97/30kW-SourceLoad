@@ -1,4 +1,4 @@
-#include <axissetting/axissetting.h>
+#include "axissetting.h"
 
 AxisSetting::AxisSetting(QChart*chart):mChart(chart)
 {
@@ -21,7 +21,7 @@ AxisSetting::AxisSetting(QChart*chart):mChart(chart)
     mAxisValue = new AxisValue(mChart); //初始化布局,根据当前轴类型动态的显示和隐藏
     mAxisLog = new AxisLog(mChart);
     mAxisBar = new AxisBarCategory(mChart);
-    mAxisTime = new AxisTime(mChart);
+    //mAxisTime = new AxisTime(mChart);
 
     QGroupBox* box = new QGroupBox(tr("其它"));
     QVBoxLayout * lay = new QVBoxLayout;
@@ -29,7 +29,7 @@ AxisSetting::AxisSetting(QChart*chart):mChart(chart)
     lay->addWidget(mAxisValue);
     lay->addWidget(mAxisLog);
     lay->addWidget(mAxisBar);
-    lay->addWidget(mAxisTime);
+    //lay->addWidget(mAxisTime);//不再支持时间轴
     box->setLayout(lay);
 
 
@@ -57,7 +57,7 @@ AxisSetting::AxisSetting(QChart*chart):mChart(chart)
 //                    mAxisTime->hide();
                     mAxisLog->setEnabled(false);
                     mAxisBar->setEnabled(false);
-                    mAxisTime->setEnabled(false);
+                    //mAxisTime->setEnabled(false);
                     break;
             case QAbstractAxis::AxisTypeLogValue:
                     mAxisLog->setCurrentAxis(static_cast<QLogValueAxis*>(mCurrentAxis));
@@ -66,7 +66,7 @@ AxisSetting::AxisSetting(QChart*chart):mChart(chart)
 //                    mAxisTime->hide();
                     mAxisValue->setEnabled(false);
                     mAxisBar->setEnabled(false);
-                    mAxisTime->setEnabled(false);
+                    //mAxisTime->setEnabled(false);
                     break;
             case QAbstractAxis::AxisTypeBarCategory:
                     mAxisBar->setCurrentAxis(static_cast<QBarCategoryAxis*>(mCurrentAxis));
@@ -75,28 +75,38 @@ AxisSetting::AxisSetting(QChart*chart):mChart(chart)
 //                    mAxisTime->hide();
                     mAxisValue->setEnabled(false);
                     mAxisLog->setEnabled(false);
-                    mAxisTime->setEnabled(false);
+                    //mAxisTime->setEnabled(false);
                     break;
-            case QAbstractAxis::AxisTypeDateTime:
-//                    mAxisValue->hide();
-//                    mAxisLog->hide();
-//                    mAxisBar->hide();
-                    mAxisTime->setCurrentAxis(static_cast<QDateTimeAxis*>(mCurrentAxis));
-                    mAxisValue->setEnabled(false);
-                    mAxisLog->setEnabled(false);
-                    mAxisBar->setEnabled(false);
-                    break;
+//            case QAbstractAxis::AxisTypeDateTime:
+////                    mAxisValue->hide();
+////                    mAxisLog->hide();
+////                    mAxisBar->hide();
+//                    mAxisTime->setCurrentAxis(static_cast<QDateTimeAxis*>(mCurrentAxis));
+//                    mAxisValue->setEnabled(false);
+//                    mAxisLog->setEnabled(false);
+//                    mAxisBar->setEnabled(false);
+//                    break;
             default:break;
     }
 
-    connect(this,&AxisSetting::associateCompeleted,this,[=]{
-        mAxisX->click();});// 表格关联完成当前曲线变化导致其携带的当前轴可能变化故要更新
+    // 导入文件，清空图表和关联表格都会发出该信号，其中导入和清空需要调用disconnectAllConnections
+    connect(this,&AxisSetting::associateCompeleted,this,[=]{mAxisX->click();});
 
 }
 
-void AxisSetting::closeChildrenWindows()
+void AxisSetting::disconnectAllConnections()
 {
+    mAxisInfo->disconnectAllConnections();
+    mAxisTitle->disconnectAllConnections();
+    mAxisLabel->disconnectAllConnections();
+    mAxisShade->disconnectAllConnections();
+    mAxisLine->disconnectAllConnections();
+    mAxisGrid->disconnectAllConnections();
 
+    mAxisValue->disconnectAllConnections();
+    mAxisLog->disconnectAllConnections();
+    mAxisBar->disconnectAllConnections();
+    //mAxisTime->disconnectAllConnections();
 }
 
 void AxisSetting::initWhichAxis()
@@ -122,7 +132,7 @@ void AxisSetting::initWhichAxis()
             else mCurrentAxis = mChart->axisY(); // Y轴操作
 
             // 清除所有曲线时会导致返回的轴是空指针,提前返回,因为下边的groupbox不允许空指针
-            if (mCurrentAxis == nullptr) return;
+            if (mCurrentAxis == nullptr) {disconnectAllConnections();return;}
 
             mAxisInfo->setCurrentAxis(mCurrentAxis);
             mAxisTitle->setCurrentAxis(mCurrentAxis);
@@ -142,7 +152,7 @@ void AxisSetting::initWhichAxis()
                             mAxisValue->setEnabled(true);
                             mAxisLog->setEnabled(false);
                             mAxisBar->setEnabled(false);
-                            mAxisTime->setEnabled(false);
+                            //mAxisTime->setEnabled(false);
                             break;
                     case QAbstractAxis::AxisTypeLogValue:
                             mAxisLog->setCurrentAxis(static_cast<QLogValueAxis*>(mCurrentAxis));
@@ -153,7 +163,7 @@ void AxisSetting::initWhichAxis()
                             mAxisValue->setEnabled(false);
                             mAxisLog->setEnabled(true);
                             mAxisBar->setEnabled(false);
-                            mAxisTime->setEnabled(false);
+                            //mAxisTime->setEnabled(false);
                             break;
                     case QAbstractAxis::AxisTypeBarCategory:
                             mAxisBar->setCurrentAxis(static_cast<QBarCategoryAxis*>(mCurrentAxis));
@@ -164,19 +174,19 @@ void AxisSetting::initWhichAxis()
                             mAxisValue->setEnabled(false);
                             mAxisLog->setEnabled(false);
                             mAxisBar->setEnabled(true);
-                            mAxisTime->setEnabled(false);
+                            //mAxisTime->setEnabled(false);
                             break;
-                    case QAbstractAxis::AxisTypeDateTime:
-                            mAxisTime->setCurrentAxis(static_cast<QDateTimeAxis*>(mCurrentAxis));
-//                            mAxisValue->hide();
-//                            mAxisLog->hide();
-//                            mAxisBar->hide();
-//                            mAxisTime->show();
-                            mAxisValue->setEnabled(false);
-                            mAxisLog->setEnabled(false);
-                            mAxisBar->setEnabled(false);
-                            mAxisTime->setEnabled(true);
-                            break;
+//                    case QAbstractAxis::AxisTypeDateTime:
+//                            mAxisTime->setCurrentAxis(static_cast<QDateTimeAxis*>(mCurrentAxis));
+////                            mAxisValue->hide();
+////                            mAxisLog->hide();
+////                            mAxisBar->hide();
+////                            mAxisTime->show();
+//                            mAxisValue->setEnabled(false);
+//                            mAxisLog->setEnabled(false);
+//                            mAxisBar->setEnabled(false);
+//                            mAxisTime->setEnabled(true);
+//                            break;
                     default:break;
             }
     });

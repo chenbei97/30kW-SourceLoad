@@ -4,7 +4,6 @@
 #include <QtCharts/QChart>
 #include <QEasingCurve>
 #include <QLegendMarker>
-#include <QDebug>
 using namespace QtCharts;
 
 class Chart : public QChart

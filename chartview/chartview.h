@@ -2,8 +2,8 @@
 #define CHARTVIEW_H
 
 #include <QApplication>
-#include <QtCharts/QChart>
-#include <QtCharts/QChartView>
+#include <QChart>
+#include <QChartView>
 using namespace QtCharts;
 
 class ChartView : public QChartView

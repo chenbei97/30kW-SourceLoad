@@ -16,7 +16,6 @@
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QSpinBox>
-
 using namespace QtCharts;
 
 class SeriesXY: public QGroupBox
@@ -28,8 +27,10 @@ public:
     QXYSeries* currentSeries() const;
     void setCurrentSeriesId(int);
     int currentSeriesId() const;
-    void updateState();
+    void updateXY();
 private:
+    void updateState();
+    void disconnectAllConnections();
     QChart * mChart;
     QXYSeries * mCurrentSeries;
     int mCurrentSeriesId;

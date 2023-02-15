@@ -1,8 +1,8 @@
 #ifndef BARCHARTBAR_H
 #define BARCHARTBAR_H
 
-#include <chartview/chartbar.h>
-#include <chartview/barassociatetable.h>
+#include "chartbar.h"
+#include "barassociatetable.h"
 
 class BarChartBar : public ChartBar
 {

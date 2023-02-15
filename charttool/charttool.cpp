@@ -1,4 +1,4 @@
-#include <charttool/charttool.h>
+#include "charttool.h"
 
 ChartTool::ChartTool(QChart* chart,QWidget*parent):QToolBox(parent),mChart(chart)
 {

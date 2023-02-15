@@ -6,7 +6,7 @@
 #include <QFontDialog>
 #include <QIcon>
 #include <QLabel>
-#include <QtCharts/QChart>
+#include <QChart>
 using namespace QtCharts;
 
 class ChartBox : public QGroupBox

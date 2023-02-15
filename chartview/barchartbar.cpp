@@ -1,4 +1,4 @@
-#include <chartview/barchartbar.h>
+#include "barchartbar.h"
 
 BarChartBar::BarChartBar(QTableView*tableview,QChartView* chartview,QWidget*parent):
     ChartBar(tableview,chartview,parent)

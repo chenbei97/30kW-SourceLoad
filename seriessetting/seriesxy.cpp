@@ -1,4 +1,4 @@
-#include <seriessetting/seriesxy.h>
+#include "seriesxy.h"
 
 SeriesXY::SeriesXY(QChart * chart,QWidget* parent):
     QGroupBox(parent),mChart(chart),mCurrentSeries(nullptr),mCurrentSeriesId(0)
@@ -56,6 +56,25 @@ SeriesXY::SeriesXY(QChart * chart,QWidget* parent):
         lay->addLayout(rlay);
         setTitle(tr("数据点"));
         setLayout(lay);
+}
+
+void SeriesXY::updateXY()
+{
+    if (! mChart->series().count()) {disconnectAllConnections();return;}// 没有曲线了操作工具栏会导致异常,所以断开连接
+
+    setCurrentSeries(static_cast<QXYSeries*>(mChart->series().at(0)),0);
+}
+
+void SeriesXY::disconnectAllConnections()
+{
+    disconnect(mPointVisible,&QCheckBox::stateChanged,this,&SeriesXY::changePointVisible);
+    disconnect(mPointLabelsVisible,&QCheckBox::stateChanged,this,&SeriesXY::changePointLabelsVisible);
+    disconnect(mPointLabelsClipping,&QCheckBox::stateChanged,this,&SeriesXY::changePointLabelsClipping);
+    disconnect(mSetSeriesColor,&QPushButton::clicked,this,&SeriesXY::changeColor);
+    disconnect(mSetSeriesWidth,SIGNAL(valueChanged(int)),this,SLOT(changeWidth(int)));
+    disconnect(mPointLabelsColor ,&QPushButton::clicked,this,&SeriesXY::changeLabelColor);
+    disconnect(mPointLabelsFont,&QPushButton::clicked,this,&SeriesXY::changeLabelFont);
+    disconnect(mFormatGroup,SIGNAL(buttonClicked(int)),this,SLOT(changeFormat(int)));
 }
 
 void SeriesXY::setCurrentSeries(QXYSeries *series,int id)

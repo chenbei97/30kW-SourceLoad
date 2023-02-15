@@ -1,4 +1,4 @@
-#include <axissetting/axisgrid.h>
+#include "axisgrid.h"
 
 AxisGrid::AxisGrid(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*parent):
     AxisBox(chart,axis,icon,parent)
@@ -25,6 +25,15 @@ AxisGrid::AxisGrid(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*p
     setLayout(lay);
 }
 
+void AxisGrid::disconnectAllConnections()
+{
+    disconnect(mAxisMinorGridVisibility,SIGNAL(stateChanged(int)),this,SLOT(changeMinorVisibility(int)));
+    disconnect(mAxisGridColor,&QPushButton::clicked,this,&AxisGrid::changeMasterColor);
+    disconnect(mAxisMinorGridColor,&QPushButton::clicked,this,&AxisGrid::changeMinorColor);
+    disconnect(mAxisGridWidth,SIGNAL(valueChanged(int)),this,SLOT(changeMasterPenWidth(int)));
+    disconnect(mAxisMinorGridWidth,SIGNAL(valueChanged(int)),this,SLOT(changeMinorPenWidth(int)));
+}
+
 void AxisGrid::updateState()
 {
     updateVisibilityState();
@@ -38,14 +47,12 @@ void AxisGrid::updateVisibilityState()
     mAxisGridVisibility->setCheckState(state1);
     disconnect(mAxisGridVisibility,SIGNAL(stateChanged(int)),this,SLOT(changeMasterVisibility(int)));
     connect(mAxisGridVisibility,SIGNAL(stateChanged(int)),this,SLOT(changeMasterVisibility(int)));
-
     Qt::CheckState state2 = mCurrentAxis->isMinorGridLineVisible()?Qt::Checked:Qt::Unchecked;
     mAxisMinorGridVisibility->setCheckState(state2);
 
     disconnect(mAxisMinorGridVisibility,SIGNAL(stateChanged(int)),this,SLOT(changeMinorVisibility(int)));
     connect(mAxisMinorGridVisibility,SIGNAL(stateChanged(int)),this,SLOT(changeMinorVisibility(int)));
 }
-
 
 void AxisGrid::changeMasterVisibility(int state)
 {

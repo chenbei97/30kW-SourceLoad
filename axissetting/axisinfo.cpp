@@ -1,4 +1,4 @@
-#include <axissetting/axisinfo.h>
+#include "axisinfo.h"
 
 AxisInfo::AxisInfo(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*parent):
     AxisBox(chart,axis,icon,parent)
@@ -28,6 +28,12 @@ AxisInfo::AxisInfo(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*p
     lay->addRow(tr("轴反转"),mAxisReverse);
     setLayout(lay);
     setTitle(tr("轴"));
+}
+
+void AxisInfo::disconnectAllConnections()
+{
+    disconnect(mAxisVisible,&QCheckBox::stateChanged,this,&AxisInfo::changeVisibility);
+    disconnect(mAxisReverse,&QCheckBox::stateChanged,this,&AxisInfo::changeReversed);
 }
 
 void AxisInfo::updateState()

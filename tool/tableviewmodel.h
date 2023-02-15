@@ -2,14 +2,13 @@
 #define TABLEVIEWMODEL_H
 
 #include <QAbstractTableModel>
+#include <QVXYModelMapper>
 #include <QHash>
 #include <QVector>
 #include <QRect>
 #include <QColor>
 #include <QTime>
-
-#include <QVXYModelMapper>
-#include <QLineSeries>
+#include <QtCharts>
 #include <QPair>
 using namespace QtCharts;
 
@@ -48,7 +47,9 @@ public:
 
     qreal dataSummary(const QVector<QVariant>&) const;
     bool isRowDataValid(int) const;
+    bool isRowDataValid(int,int,int) const;
     bool isColumnDataValid(int) const;
+    bool isColumnDataValid(int,int,int) const;
     bool isRowRegionDataValid(int,int,int,int) const;
     bool isColRegionDataValid(int,int,int,int) const;
     bool isAllDataValid() const;
@@ -61,8 +62,10 @@ public:
     void addCellMapping(QRect,QColor);
     void addColMapping(int,QColor);
     void addColMapping(int,int,int,QColor);
+    void addColMapping(int,int,int,QList<QColor>);
     void addRowMapping(int,QColor);
     void addRowMapping(int,int,int,QColor);
+    void addRowMapping(int,int,int,QList<QColor>);
     void addDoubleColMapping(QXYSeries*,int,int);
     void addColRegionMapping(int,int,int,int,QList<QColor>);
     void addRowRegionMapping(int,int,int,int,QList<QColor>);

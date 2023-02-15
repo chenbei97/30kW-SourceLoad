@@ -1,4 +1,4 @@
-#include <chartview/associatebaraxis.h>
+#include "associatebaraxis.h"
 
 AssociateBarAxis::AssociateBarAxis(QWidget*parent):QGroupBox(parent)
 {

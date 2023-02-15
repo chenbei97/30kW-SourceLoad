@@ -1,5 +1,4 @@
-#include <tool/tableviewmodel.h>
-#include <QDebug>
+#include "tableviewmodel.h"
 
 TableViewModel::TableViewModel(QObject *parent):QAbstractTableModel(parent)
 { // 参加编程手册 https://doc.qt.io/qt-5/model-view-programming.html
@@ -298,7 +297,9 @@ QVector<QVariant> TableViewModel::colData(int col, int firstRow, int rowCount) c
     if (lastRow>mRowCount-1) lastRow = mRowCount -1; // 同理最多取到行数-1
     QVector<QVariant> d;
     for(int r = firstRow ; r <=lastRow; ++r)
+    {
         d.append(mData.at(r)->at(col)); // col外部可以保证不越界
+    }
     return d;
 }
 
@@ -316,9 +317,19 @@ bool TableViewModel::isRowDataValid(int row) const
     return  dataSummary(rowData(row)) > 0.0;
 }
 
+bool TableViewModel::isRowDataValid(int row, int firstCol, int colCount) const
+{
+    return dataSummary(rowData(row,firstCol,colCount));
+}
+
 bool TableViewModel::isColumnDataValid(int col) const
 {
     return dataSummary(colData(col)) > 0.0;
+}
+
+bool TableViewModel::isColumnDataValid(int col, int firstRow, int rowCount) const
+{
+    return dataSummary(colData(col,firstRow,rowCount));
 }
 
 bool TableViewModel::isRowRegionDataValid(int firstRow, int lastRow, int firstCol, int colCount) const
@@ -382,12 +393,22 @@ void TableViewModel::addColMapping(int col ,QColor color)
 }
 
 void TableViewModel::addColMapping(int col, int firstRow, int rowCount, QColor color)
-{ // 对列的指定范围进行映射,例如起始2,共3行的区域,即2,3,4, 所以不取等号2+3=5
+{ // 对列的指定范围进行映射,例如起始2,共3行的区域,即2,3,4, 所以不取等号2+3=5(用于柱状图)
     auto lastRow = firstRow+rowCount - 1; // 0基准的实际值
-    if (lastRow > mRowCount-1) lastRow = mRowCount; // 最后1行不能超过最大行数-1
+    if (lastRow > mRowCount-1) lastRow = mRowCount - 1; // 最后1行不能超过最大行数-1
     for(int row = firstRow; row <= lastRow; ++row) // 0基准取等号
     {
         addCellMapping(QRect(col,row,1,1),color);
+    }
+}
+
+void TableViewModel::addColMapping(int col, int firstRow, int rowCount,QList<QColor> colorlist)
+{ // 对列的指定范围进行映射,且每个单元格使用不同的颜色(用于饼图)
+    auto lastRow = firstRow+rowCount - 1; // 0基准的实际值
+    if (lastRow > mRowCount-1) lastRow = mRowCount - 1; // 最后1行不能超过最大行数-1
+    for(int row = firstRow; row <= lastRow; ++row) // 0基准取等号
+    {
+        addCellMapping(QRect(col,row,1,1),colorlist[row-firstRow]); // 注意颜色不能越界,从0开始的
     }
 }
 
@@ -400,15 +421,23 @@ void TableViewModel::addRowMapping(int row, QColor color)
 }
 
 void TableViewModel::addRowMapping(int row, int firstCol, int colCount, QColor color)
-{// 对行的指定范围映射
+{// 对行的指定范围映射相同颜色
     auto lastCol = firstCol+colCount - 1; // 0基准的实际值
-    if (lastCol > mColumnCount-1) lastCol = mColumnCount; // 最后1列不能超过最大列数-1
+    if (lastCol > mColumnCount-1) lastCol = mColumnCount - 1; // 最后1列不能超过最大列数-1
     for(int col = firstCol; col <= lastCol; ++col)// 0基准取等号
     {
         addCellMapping(QRect(col,row,1,1),color);
     }
-//    qDebug()<<"（4）行区域模式，系列对应的实际行数为 "<<row<<", 事先保存的起始列为"<<firstCol
-//           <<",保存的映射列数为"<<colCount;
+}
+
+void TableViewModel::addRowMapping(int row, int firstCol, int colCount, QList<QColor> colorlist)
+{// 对行的指定范围映射不同颜色
+    auto lastCol = firstCol+colCount - 1; // 0基准的实际值
+    if (lastCol > mColumnCount-1) lastCol = mColumnCount - 1; // 最后1列不能超过最大列数-1
+    for(int col = firstCol; col <= lastCol; ++col)// 0基准取等号
+    {
+        addCellMapping(QRect(col,row,1,1),colorlist[col-firstCol]);
+    }
 }
 
 void TableViewModel::addDoubleColMapping(QXYSeries* series,int xCol, int yCol)

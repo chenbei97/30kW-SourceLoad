@@ -1,4 +1,4 @@
-#include <chart/chartdatagenerator.h>
+#include "chartdatagenerator.h"
 
 ChartDataGenerator::ChartDataGenerator(QObject *parent) : QObject(parent)
 {
@@ -81,11 +81,11 @@ QPieSeries * ChartDataGenerator::pie()
     //    mapper->setLabelsColumn(0);
     //    mapper->setValuesColumn(1);
     QPieSeries * series = new QPieSeries;
-    series->append("A",0.1);
-    series->append("B",0.15);
-    series->append("C",0.2);
-    series->append("D",0.5);
-    series->append("E",0.05);
+    series->append("A(10%)",0.1);
+    series->append("B(15%)",0.15);
+    series->append("C(20%)",0.2);
+    series->append("D(50%)",0.5);
+    series->append("E(5%)",0.05);
     series->setHoleSize(0.2);
     series->setPieSize(0.7);
     series->setPieStartAngle(0.);

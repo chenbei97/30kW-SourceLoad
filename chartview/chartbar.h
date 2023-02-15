@@ -3,8 +3,8 @@
 
 #include <QToolBar>
 #include <QTableView>
-#include <tool/tableviewmodel.h>
-#include <chartview/screenshoot.h>
+#include "../tool/tableviewmodel.h"
+#include "screenshoot.h"
 
 class ChartBar : public QToolBar
 {

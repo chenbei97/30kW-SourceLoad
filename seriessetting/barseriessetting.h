@@ -1,10 +1,10 @@
 #ifndef BARSERIESSETTING_H
 #define BARSERIESSETTING_H
 
-#include <seriessetting/seriessetting.h>
-#include <seriessetting/seriesinfo.h>
-#include <seriessetting/seriesbar.h>
-#include <seriessetting/seriesbarset.h>
+#include "seriessetting.h"
+#include "seriesinfo.h"
+#include "seriesbar.h"
+#include "seriesbarset.h"
 
 class BarSeriesSetting : public QVBoxLayout
 {
@@ -23,5 +23,4 @@ signals:
     void modeChanged(int,int);
     void seriesColorChanged(QBarSeries*,QColor,int);
 };
-
 #endif // BARSERIESSETTING_H

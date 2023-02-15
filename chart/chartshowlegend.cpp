@@ -1,5 +1,4 @@
-#include <chart/chartshowlegend.h>
-#include <QDebug>
+#include "chartshowlegend.h"
 
 ChartShowLegend::ChartShowLegend(QObject*parent):
     QObject(parent),mShowLegend(true)

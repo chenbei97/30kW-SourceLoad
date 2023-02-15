@@ -1,7 +1,7 @@
 #ifndef LINEARGRADIENTPARAMWIDGET_H
 #define LINEARGRADIENTPARAMWIDGET_H
 
-#include <chartsetting/gradientparamwidget.h>
+#include "gradientparamwidget.h"
 
 class LinearGradientParamWidget  : public GradientParamWidget
 {

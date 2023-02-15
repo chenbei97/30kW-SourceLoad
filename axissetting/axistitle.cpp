@@ -1,4 +1,4 @@
-#include <axissetting/axistitle.h>
+#include "axistitle.h"
 
 AxisTitle::AxisTitle(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*parent):
     AxisBox(chart,axis,icon,parent)
@@ -38,6 +38,14 @@ AxisTitle::AxisTitle(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget
         setLayout(lay);
 }
 
+void AxisTitle::disconnectAllConnections()
+{
+    disconnect(mAxisTitleVisible,&QCheckBox::stateChanged,this,&AxisTitle::changeVisibility);
+    disconnect(mAxisTitleSetText,&QPushButton::clicked,this,&AxisTitle::changeText);
+    disconnect(mAxisTitleColor,&QPushButton::clicked,this,&AxisTitle::changeColor);
+    disconnect(mAxisTitleFont,&QPushButton::clicked,this,&AxisTitle::changeFont);
+}
+
 void AxisTitle::updateState()
 {
         updateTitleVisibilityState();
@@ -55,7 +63,6 @@ void AxisTitle::updateTitleVisibilityState()
     disconnect(mAxisTitleVisible,&QCheckBox::stateChanged,this,&AxisTitle::changeVisibility);
     connect(mAxisTitleVisible,&QCheckBox::stateChanged,this,&AxisTitle::changeVisibility);
 }
-
 
 void AxisTitle::changeVisibility(int state)
 {

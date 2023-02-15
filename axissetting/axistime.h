@@ -19,6 +19,7 @@ public:
     void setCurrentAxis(QDateTimeAxis*);
     QDateTimeAxis* currentAxis() const;
     void updateState();
+    void disconnectAllConnections();
 private:
     QChart * mChart;
     QDateTimeAxis * mCurrentAxis;

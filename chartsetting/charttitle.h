@@ -4,7 +4,7 @@
 #include <QVBoxLayout>
 #include <QLineEdit>
 #include <QPushButton>
-#include <chartsetting/chartbox.h>
+#include "chartbox.h"
 
 class ChartTitle : public ChartBox
 {

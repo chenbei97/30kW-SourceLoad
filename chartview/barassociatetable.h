@@ -3,11 +3,11 @@
 
 #include <QDialog>
 #include <QLegendMarker>
-#include <chart/chartshowtip.h>
-#include <chart/chartshowlegend.h>
-#include <chartview/associatebarmode.h>
-#include <chartview/associatebarseries.h>
-#include <chartview/associatebaraxis.h>
+#include "../chart/chartshowtip.h"
+#include "../chart/chartshowlegend.h"
+#include "associatebarmode.h"
+#include "associatebarseries.h"
+#include "associatebaraxis.h"
 
 class BarAssociateTable : public QDialog
 {

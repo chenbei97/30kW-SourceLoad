@@ -8,6 +8,7 @@ class AxisShade : public AxisBox
     Q_OBJECT
 public:
     explicit AxisShade(QChart*, QAbstractAxis*,const QIcon&, QWidget*parent = Q_NULLPTR);
+    void disconnectAllConnections() override;
 private:
     void updateState() override;
     QCheckBox * mAxisShadeVisibility;

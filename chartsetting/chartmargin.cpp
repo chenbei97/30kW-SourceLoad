@@ -1,4 +1,4 @@
-#include <chartsetting/chartmargin.h>
+#include "chartmargin.h"
 
 ChartMargin::ChartMargin(QChart *chart,const QIcon& icon,QWidget*parent):ChartBox(chart,icon,parent)
 {

@@ -9,7 +9,6 @@
 #include <QFormLayout>
 #include <QPushButton>
 #include <QDoubleSpinBox>
-
 using namespace QtCharts;
 
 class SeriesScatter : public QGroupBox
@@ -21,8 +20,10 @@ public:
     QScatterSeries* currentSeries() const;
     void setCurrentSeriesId(int);
     int currentSeriesId() const;
-    void updateState();
+    void updateScatter();
 private:
+    void updateState();
+    void disconnectAllConnections();
     QChart * mChart;
     QScatterSeries * mCurrentSeries;
     int mCurrentSeriesId;

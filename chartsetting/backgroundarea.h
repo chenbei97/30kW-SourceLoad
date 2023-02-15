@@ -6,7 +6,7 @@
 #include <QSpinBox>
 #include <QColorDialog>
 #include <QListWidget>
-#include <chartsetting/backgroundareagradient.h>
+#include "backgroundareagradient.h"
 
 class BackgroundArea : public QWidget
 {

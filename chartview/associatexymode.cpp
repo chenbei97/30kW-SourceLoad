@@ -1,4 +1,4 @@
-#include <chartview/associatexymode.h>
+#include "associatexymode.h"
 
 AssociateXYMode::AssociateXYMode(TableViewModel*model,QWidget*parent):
     QGroupBox(parent),mTableModel(model)

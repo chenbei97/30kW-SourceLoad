@@ -1,4 +1,4 @@
-﻿#include <tool/tableview_tool.h>
+﻿#include "tableview_tool.h"
 
 TableViewWidget::TableViewWidget(QWidget *parent): QMainWindow(parent),
     mTableView(new QTableView),mTable(new Table(mTableView,12,10)),mTableSizeDlg(new TableSizeDialog),

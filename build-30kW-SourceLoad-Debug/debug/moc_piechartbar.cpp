@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_PieChartBar_t {
-    QByteArrayData data[3];
-    char stringdata0[25];
+    QByteArrayData data[4];
+    char stringdata0[44];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,10 +33,11 @@ static const qt_meta_stringdata_PieChartBar_t qt_meta_stringdata_PieChartBar = {
     {
 QT_MOC_LITERAL(0, 0, 11), // "PieChartBar"
 QT_MOC_LITERAL(1, 12, 11), // "modeChanged"
-QT_MOC_LITERAL(2, 24, 0) // ""
+QT_MOC_LITERAL(2, 24, 0), // ""
+QT_MOC_LITERAL(3, 25, 18) // "seriesColorChanged"
 
     },
-    "PieChartBar\0modeChanged\0"
+    "PieChartBar\0modeChanged\0\0seriesColorChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -46,18 +47,20 @@ static const uint qt_meta_data_PieChartBar[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   19,    2, 0x06 /* Public */,
+       1,    2,   24,    2, 0x06 /* Public */,
+       3,    2,   29,    2, 0x06 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
+    QMetaType::Void, QMetaType::QColor, QMetaType::Int,    2,    2,
 
        0        // eod
 };
@@ -69,6 +72,7 @@ void PieChartBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->modeChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 1: _t->seriesColorChanged((*reinterpret_cast< QColor(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -77,6 +81,13 @@ void PieChartBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             typedef void (PieChartBar::*_t)(int , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&PieChartBar::modeChanged)) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            typedef void (PieChartBar::*_t)(QColor , int );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&PieChartBar::seriesColorChanged)) {
+                *result = 1;
                 return;
             }
         }
@@ -108,13 +119,13 @@ int PieChartBar::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
@@ -124,6 +135,13 @@ void PieChartBar::modeChanged(int _t1, int _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void PieChartBar::seriesColorChanged(QColor _t1, int _t2)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

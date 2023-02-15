@@ -6,7 +6,7 @@
 #include <QLabel>
 #include <QEasingCurve>
 #include <QGridLayout>
-#include <chartsetting/chartbox.h>
+#include "chartbox.h"
 
 class ChartAnimation : public ChartBox
 {

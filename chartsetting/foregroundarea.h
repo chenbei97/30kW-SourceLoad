@@ -8,7 +8,7 @@
 #include <QSpinBox>
 #include <QColorDialog>
 #include <QGroupBox>
-#include <QtCharts/QChart>
+#include <QChart>
 using namespace QtCharts;
 
 class ForegroundArea: public QGroupBox

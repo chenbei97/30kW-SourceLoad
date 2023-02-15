@@ -4,11 +4,11 @@
 #include <QDialog>
 #include <QVXYModelMapper>
 #include <QLegendMarker>
-#include <chart/chartshowtip.h>
-#include <chart/chartshowlegend.h>
-#include <chartview/associatexyaxis.h>
-#include <chartview/associatexyseries.h>
-#include <chartview/associatexymode.h>
+#include "../chart/chartshowtip.h"
+#include "../chart/chartshowlegend.h"
+#include "associatexyaxis.h"
+#include "associatexyseries.h"
+#include "associatexymode.h"
 
 class LineAssociateTable : public QDialog
 {

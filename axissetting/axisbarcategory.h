@@ -18,6 +18,7 @@ public:
     void setCurrentAxis(QBarCategoryAxis*);
     QBarCategoryAxis* currentAxis() const;
     void updateState();
+    void disconnectAllConnections();
 private:
     QChart * mChart;
     QBarCategoryAxis * mCurrentAxis;

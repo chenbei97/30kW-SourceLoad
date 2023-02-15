@@ -1,4 +1,4 @@
-#include <chartview/chartbar.h>
+#include "chartbar.h"
 
 ChartBar::ChartBar(QTableView*tableview,QChartView* chartview,QWidget*parent):
     QToolBar(parent),mTableView(tableview),mChartView(chartview),mChart(chartview->chart())
@@ -33,9 +33,4 @@ ChartBar::ChartBar(QTableView*tableview,QChartView* chartview,QWidget*parent):
         emit associateCompeleted(); // 借助此信号来更新工具栏
     });
     connect(screenshot,&QAction::triggered,this,[=]{mScreenShot->exec();});
-
-
-//    connect(this,SIGNAL(seriesRemoved(QScatterSeries*)),mAssociateTable,SLOT(seriesRemoved(QScatterSeries*)));
-    //    connect(this,SIGNAL(seriesColorChanged(QScatterSeries*)),mAssociateTable,SLOT(seriesColorChanged(QScatterSeries*)));
-
 }

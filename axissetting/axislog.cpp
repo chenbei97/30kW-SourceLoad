@@ -1,4 +1,4 @@
-#include <axissetting/axislog.h>
+#include "axislog.h"
 
 AxisLog::AxisLog(QChart * chart,QWidget*parent):
     QGroupBox(parent),mChart(chart),mCurrentAxis(nullptr)
@@ -41,6 +41,15 @@ AxisLog::AxisLog(QChart * chart,QWidget*parent):
    setLayout(vlay); // 布局不影响先初始化完毕
    setMinimumWidth(450); // 跟随axisbox.cpp
    setTitle(tr("对数轴"));
+}
+
+void AxisLog::disconnectAllConnections()
+{
+    disconnect(mBase,SIGNAL(valueChanged(double)),this,SLOT(changeBase(double)));
+    disconnect(mMinRange,SIGNAL(valueChanged(double)),this,SLOT(changeMin(double)));
+    disconnect(mMaxRange,SIGNAL(valueChanged(double)),this,SLOT(changeMax(double)));
+    disconnect(mMinorTickCount,SIGNAL(valueChanged(int)),this,SLOT(changeMinorTickCount(int)));
+    disconnect(mLabelFormatBtn,SIGNAL(clicked()),this,SLOT(changeLabelFormat()));
 }
 
 void AxisLog::setCurrentAxis(QLogValueAxis*axis)

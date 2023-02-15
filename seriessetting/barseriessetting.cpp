@@ -1,4 +1,4 @@
-#include <seriessetting/barseriessetting.h>
+#include "barseriessetting.h"
 
 BarSeriesSetting::BarSeriesSetting(QChart*chart):mChart(chart)
 {
@@ -10,7 +10,7 @@ BarSeriesSetting::BarSeriesSetting(QChart*chart):mChart(chart)
     addWidget(mBar);
     addWidget(mBarSet);
 
-    // 更新柱状图曲线的界面设置
+    // 导入文件，清空图表和关联表格都会发出该信号，其中导入和清空需要调用disconnectAllConnections
     connect(this,&BarSeriesSetting::associateCompeleted,mInfo,&SeriesInfo::updateInfo);
     connect(this,&BarSeriesSetting::associateCompeleted,mBar,&SeriesBar::updateBar);
     connect(this,&BarSeriesSetting::associateCompeleted,mBarSet,&SeriesBarSet::updateBarSet);

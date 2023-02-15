@@ -1,4 +1,4 @@
-#include <seriessetting/lineseriessetting.h>
+#include "lineseriessetting.h"
 
 LineSeriesSetting::LineSeriesSetting(QChart*chart):mChart(chart)
 {
@@ -8,7 +8,9 @@ LineSeriesSetting::LineSeriesSetting(QChart*chart):mChart(chart)
     addLayout(mGenericSetting);
     addWidget(mXYSetting);
 
-    connect(this,&LineSeriesSetting::associateCompeleted,mGenericSetting,&SeriesSetting::associateCompeleted);
+    // 导入文件，清空图表和关联表格都会发出该信号，其中导入和清空需要调用disconnectAllConnections
+    connect(this,&LineSeriesSetting::associateCompeleted,mGenericSetting,&SeriesSetting::updateGenericSetting);
+    connect(this,&LineSeriesSetting::associateCompeleted,mXYSetting,&SeriesXY::updateXY);
 
     connect(mXYSetting,static_cast<void (SeriesXY::*)(QXYSeries*)>(&SeriesXY::seriesColorChanged),
             this,[=](QXYSeries*series){emit seriesColorChanged(static_cast<QLineSeries*>(series));});

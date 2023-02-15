@@ -1,4 +1,4 @@
-#include <seriessetting/seriesbar.h>
+#include "seriesbar.h"
 
 SeriesBar::SeriesBar(QChart * chart,QWidget* parent):
     QGroupBox(parent),mChart(chart),mCurrentSeries(nullptr)
@@ -44,8 +44,18 @@ SeriesBar::SeriesBar(QChart * chart,QWidget* parent):
 
 void SeriesBar::updateBar()
 { // 提供给外部使用,对setCurrentSeries的封装
-    if (mChart->series().count() == 0) return;
+    if (mChart->series().count() == 0) {disconnectAllConnections();return;} //防止empty后曲线并不存在操作曲线工具栏导致异常
     setCurrentSeries(static_cast<QBarSeries*>(mChart->series().at(0)));
+}
+
+void SeriesBar::disconnectAllConnections()
+{
+    disconnect(mBarWidth,SIGNAL(valueChanged(double)),this,SLOT(changeWidth(double)));
+    disconnect(mLabelVisible,SIGNAL(stateChanged(int)),this,SLOT(changeVisible(int)));
+    disconnect(mLabelAngle,SIGNAL(valueChanged(double)),this,SLOT(changeAngle(double)));
+    disconnect(mLabelPosition,SIGNAL(currentIndexChanged(int)),this,SLOT(changePosition(int)));
+    disconnect(mLabelFont,&QPushButton::clicked,this,&SeriesBar::changeFont);
+    disconnect(mBorderColor,&QPushButton::clicked,this,&SeriesBar::changeBorderColor);
 }
 
 void SeriesBar::setCurrentSeries(QBarSeries *series)
@@ -139,7 +149,6 @@ void SeriesBar::changeFont()
      });
     dlg->exec(); delete dlg;
 }
-
 
 void SeriesBar::updateBorderColorState()
 {

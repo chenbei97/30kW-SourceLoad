@@ -49,6 +49,8 @@ INPUT(
 ./debug\associatebaraxis.o
 ./debug\associatebarmode.o
 ./debug\associatebarseries.o
+./debug\associatepiemode.o
+./debug\associatepieseries.o
 ./debug\associatexyaxis.o
 ./debug\associatexymode.o
 ./debug\associatexyseries.o
@@ -58,6 +60,7 @@ INPUT(
 ./debug\chartview.o
 ./debug\lineassociatetable.o
 ./debug\linechartbar.o
+./debug\pieassociatetable.o
 ./debug\piechartbar.o
 ./debug\scatterassociatetable.o
 ./debug\scatterchartbar.o
@@ -102,6 +105,7 @@ INPUT(
 ./debug\seriesbox.o
 ./debug\seriesinfo.o
 ./debug\seriespie.o
+./debug\seriespieslice.o
 ./debug\seriesscatter.o
 ./debug\seriessetting.o
 ./debug\seriesxy.o
@@ -170,6 +174,8 @@ INPUT(
 ./debug\moc_associatebaraxis.o
 ./debug\moc_associatebarmode.o
 ./debug\moc_associatebarseries.o
+./debug\moc_associatepiemode.o
+./debug\moc_associatepieseries.o
 ./debug\moc_associatexyaxis.o
 ./debug\moc_associatexymode.o
 ./debug\moc_associatexyseries.o
@@ -179,6 +185,7 @@ INPUT(
 ./debug\moc_chartview.o
 ./debug\moc_lineassociatetable.o
 ./debug\moc_linechartbar.o
+./debug\moc_pieassociatetable.o
 ./debug\moc_piechartbar.o
 ./debug\moc_scatterassociatetable.o
 ./debug\moc_scatterchartbar.o
@@ -217,6 +224,7 @@ INPUT(
 ./debug\moc_seriesbox.o
 ./debug\moc_seriesinfo.o
 ./debug\moc_seriespie.o
+./debug\moc_seriespieslice.o
 ./debug\moc_seriesscatter.o
 ./debug\moc_seriessetting.o
 ./debug\moc_seriesxy.o

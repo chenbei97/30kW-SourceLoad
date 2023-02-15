@@ -3,15 +3,13 @@
 
 #include <QCheckBox>
 #include <QComboBox>
-#include <QLabel>
 #include <QGridLayout>
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QPushButton>
 #include <QDoubleSpinBox>
 #include <QFormLayout>
-#include <chartsetting/chartbox.h>
-#include <QDebug>
+#include "chartbox.h"
 
 class ChartLegend : public ChartBox
 {

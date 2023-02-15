@@ -1,10 +1,10 @@
 #ifndef CHARTFOREGROUND_H
 #define CHARTFOREGROUND_H
 
-#include <chartsetting/chartbox.h>
-#include <chartsetting/foregroundarea.h>
-#include <chartsetting/foregroundborder.h>
 #include <QCheckBox>
+#include "chartbox.h"
+#include "foregroundarea.h"
+#include "foregroundborder.h"
 
 class ChartForeground : public ChartBox
 {

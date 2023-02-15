@@ -11,14 +11,14 @@
 #include "axislog.h"
 #include "axistime.h"
 #include "axisbarcategory.h"
-//QAbstractAxis具有的所有属性设置,以及Value/Log特有的根据轴类型动态切换
+
 class AxisSetting : public QVBoxLayout
 {
     Q_OBJECT
 public:
     explicit AxisSetting(QChart*);
-    void closeChildrenWindows();
 private:
+    void disconnectAllConnections();
     QChart * mChart;
     QIcon mIcon;
     QAbstractAxis * mCurrentAxis;

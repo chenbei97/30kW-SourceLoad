@@ -1,4 +1,4 @@
-#include <axissetting/axisshade.h>
+#include "axisshade.h"
 
 AxisShade::AxisShade(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*parent):
     AxisBox(chart,axis,icon,parent)
@@ -27,6 +27,15 @@ AxisShade::AxisShade(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget
         lay->addRow(tr("&背景样式"),mAxisShadeBrushStyle);
         setTitle(tr("轴阴影"));
         setLayout(lay);
+}
+
+void AxisShade::disconnectAllConnections()
+{
+    disconnect(mAxisShadeVisibility,&QCheckBox::stateChanged,this,&AxisShade::changeVisibility);
+    disconnect(mAxisShadeBorderColor,&QPushButton::clicked,this,&AxisShade::changeBorderColor);
+    disconnect(mAxisShadeBrushColor,&QPushButton::clicked,this,&AxisShade::changeBrushColor);
+    disconnect(mAxisShadeBrushStyle,SIGNAL(currentIndexChanged(int)),this,SLOT(changeBrushStyle(int)));
+    disconnect(mAxisShadePenWidth,SIGNAL(valueChanged(int)),this,SLOT(changePenWidth(int)));
 }
 
 void AxisShade::updateState()

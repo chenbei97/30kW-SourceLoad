@@ -1,7 +1,7 @@
 #ifndef SERIESINFO_H
 #define SERIESINFO_H
 
-#include <seriessetting/seriesbox.h>
+#include "seriesbox.h"
 
 class SeriesInfo : public SeriesBox
 {
@@ -9,6 +9,7 @@ class SeriesInfo : public SeriesBox
 public:
     explicit SeriesInfo(QChart *,QWidget* = Q_NULLPTR);
     void updateInfo();
+    void disconnectAllConnections();//给seriessetting使用
 private:
     void updateState() override;
     QCheckBox * mSeriseVisible;

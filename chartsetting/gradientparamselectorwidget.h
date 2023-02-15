@@ -1,7 +1,7 @@
 #ifndef GRADIENTPARAMSELECTORWIDGET_H
 #define GRADIENTPARAMSELECTORWIDGET_H
 
-#include <chartsetting/gradientparamselector.h>
+#include "gradientparamselector.h"
 
 class GradientParamSelectorWidget : public QWidget
 {

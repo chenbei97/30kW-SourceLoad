@@ -1,4 +1,4 @@
-#include <axissetting/axisline.h>
+#include "axisline.h"
 
 AxisLine::AxisLine(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*parent):
     AxisBox(chart,axis,icon,parent)
@@ -16,6 +16,13 @@ AxisLine::AxisLine(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*p
     lay->addRow(tr("&轴线宽度"),mAxisLineWidth);
     setTitle(tr("轴线"));
     setLayout(lay);
+}
+
+void AxisLine::disconnectAllConnections()
+{
+    disconnect(mAxisLineVisibility,&QCheckBox::stateChanged,this,&AxisLine::changeVisibility);
+    disconnect(mAxisLineColor,&QPushButton::clicked,this,&AxisLine::changeColor);
+    disconnect(mAxisLineWidth,SIGNAL(valueChanged(int)),this,SLOT(changePenWidth(int)));
 }
 
 void AxisLine::updateState()

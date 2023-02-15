@@ -21,6 +21,7 @@ public:
     explicit AxisLog(QChart*, QWidget*parent = Q_NULLPTR);
     void setCurrentAxis(QLogValueAxis*);
     QLogValueAxis* currentAxis() const;
+    void disconnectAllConnections();
 private:
     void updateState();
     QChart * mChart;

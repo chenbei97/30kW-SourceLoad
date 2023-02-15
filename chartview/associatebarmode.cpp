@@ -1,4 +1,4 @@
-#include <chartview/associatebarmode.h>
+#include "associatebarmode.h"
 
 AssociateBarMode::AssociateBarMode(TableViewModel*model,QWidget*parent):
     QGroupBox(parent),mTableModel(model)

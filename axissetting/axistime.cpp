@@ -1,4 +1,4 @@
-#include <axissetting/axistime.h>
+#include "axistime.h"
 
 AxisTime::AxisTime(QChart * chart,QWidget*parent):
      QGroupBox(parent),mChart(chart),mCurrentAxis(nullptr)
@@ -37,6 +37,15 @@ void AxisTime::setCurrentAxis(QDateTimeAxis * axis)
 QDateTimeAxis * AxisTime::currentAxis() const
 {
     return mCurrentAxis;
+}
+
+void AxisTime::disconnectAllConnections()
+{
+    disconnect(mMinTimeEdit,SIGNAL(dateTimeChanged(const QDateTime&)),this,SLOT(changeMin(const QDateTime&)));
+    disconnect(mMaxTimeEdit,SIGNAL(dateTimeChanged(const QDateTime&)),this,SLOT(changeMax(const QDateTime&)));
+    disconnect(mTickCount,SIGNAL(valueChanged(int)),this,SLOT(changeTickCount(int)));
+    disconnect(mDateFormat,SIGNAL(currentIndexChanged(const QString&)),this,SLOT(changeDateFormat(const QString&)));
+    disconnect(mTimeFormat,SIGNAL(currentIndexChanged(const QString&)),this,SLOT(changeTimeFormat(const QString&)));
 }
 
 void AxisTime::updateState()

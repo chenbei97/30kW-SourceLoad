@@ -1,4 +1,4 @@
-#include <chartview/associatebarseries.h>
+#include "associatebarseries.h"
 
 AssociateBarSeries::AssociateBarSeries(QWidget*parent):QGroupBox(parent)
 {

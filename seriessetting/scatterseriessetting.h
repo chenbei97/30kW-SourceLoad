@@ -1,9 +1,9 @@
 #ifndef SCATTERSERIESSETTING_H
 #define SCATTERSERIESSETTING_H
 
-#include <seriessetting/seriessetting.h>
-#include <seriessetting/seriesxy.h>
-#include <seriessetting/seriesscatter.h>
+#include "seriessetting.h"
+#include "seriesxy.h"
+#include "seriesscatter.h"
 
 class ScatterSeriesSetting : public QVBoxLayout
 {

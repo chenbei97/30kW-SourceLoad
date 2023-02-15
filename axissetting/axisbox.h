@@ -29,6 +29,7 @@ public:
     QChart* chart() const;
     void setCurrentAxis(QAbstractAxis*);
     QAbstractAxis * currentAxis() const;
+    virtual void disconnectAllConnections() = 0;
     QColorDialog* colorDialog(const QColor&);
     QFontDialog* fontDialog(const QFont&);
     QComboBox * brushStyleCombo();

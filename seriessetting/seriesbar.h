@@ -8,7 +8,7 @@
 #include <QtCharts>
 #include <QFormLayout>
 #include <QPushButton>
-#include <chartsetting/gradientparamspinbox.h>
+#include "../chartsetting/gradientparamspinbox.h"
 
 using namespace QtCharts;
 
@@ -22,6 +22,7 @@ public:
     void updateBar();
 private:
     void updateState();
+    void disconnectAllConnections();
     QChart * mChart;
     QBarSeries * mCurrentSeries;
     QIcon mIcon;

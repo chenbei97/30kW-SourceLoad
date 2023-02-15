@@ -447,7 +447,7 @@ QVector<QVariant> colData(int) const;
 QVector<QVariant> colData(int,int,int) const;
 ③ 柱状图的流程图绘制完毕，下周继续开发饼图和时间序列的图
 
-2023/2/11：
+2023/2/13：
 ① 迁徙工程从qtcreator到visual studio，移除不必要的文件夹csv,test等
 ② 增加PieChart类主窗口
 ③ 增加PieChartTool 饼图工具栏
@@ -457,12 +457,21 @@ QVector<QVariant> colData(int,int,int) const;
 ⑦ 增加PieSeriesSetting 饼图的工具栏设置（饼图没有轴，无需轴设置）
 
 
+2023/2/14：
+① 完成SeriesPieSlice 饼图系列设置
+⑦ 完成PieSeriesSetting 饼图的工具栏设置（饼图没有轴，无需轴设置）
+③ 增加AssociatePieSeries类用于饼图关联表格的曲线设置
+④ 增加AssociatePieMode类用于饼图关联表格的模式设置
+⑤ 增加PieAssociateTable类用于饼图关联表格
+⑥ 发现使用empty清空图表后，滑动曲线设置的一些参数会导致异常，折线散点直方图和饼图都出现，且只出现在曲线设置上导致的异常
 
-
-
-
-
-
+2023/2/15：
+① 解决了2/14的⑥问题
+解决方法是在seriessetting/axissetting中的所有关于曲线设置的工具类都增加disconnectAllConnections()函数
+一旦associateTable()信号发出，这些工具类会首先判断mChart->series().count()是否为0,
+不为0会调用setCurrentAxis和SetCurrentSeries，然后内部调用updateState()函数来更新工具栏的状态，不为0说明是来自关联表格动作发出的associateTable()
+如果为0，说明是清空动作或者导入文件发出的，无论哪种就会导致mChart->series().count()==0，然后调用disconnectAllConnections()再返回
+之前不返回，就会导致连接还起作用，但是连接的槽函数内部都会操作mCurrentAxis和mCurrentSeries就会导致异常
 
 
 

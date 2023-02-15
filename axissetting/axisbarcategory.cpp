@@ -1,5 +1,4 @@
-#include <axissetting/axisbarcategory.h>
-#include <QDebug>
+#include "axisbarcategory.h"
 
 AxisBarCategory::AxisBarCategory(QChart * chart,QWidget*parent):
     QGroupBox(parent),mChart(chart),mCurrentAxis(nullptr),mCategoriesCount(0)
@@ -20,6 +19,11 @@ AxisBarCategory::AxisBarCategory(QChart * chart,QWidget*parent):
     setTitle(tr("类别轴"));
 }
 
+void AxisBarCategory::disconnectAllConnections()
+{
+    disconnect(mClearBtn,&QPushButton::clicked,this,&AxisBarCategory::clearCategories);
+    disconnect(mSetBtn,&QPushButton::clicked,this,&AxisBarCategory::setCategories);
+}
 
 void AxisBarCategory::setCurrentAxis(QBarCategoryAxis * axis)
 {

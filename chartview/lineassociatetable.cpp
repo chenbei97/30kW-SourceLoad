@@ -1,4 +1,4 @@
-#include <chartview/lineassociatetable.h>
+#include "lineassociatetable.h"
 
 LineAssociateTable::LineAssociateTable(QTableView*tableview,QChartView*chartview,QWidget*parent):
     QDialog(parent),mTableView(tableview),mChartView(chartview)

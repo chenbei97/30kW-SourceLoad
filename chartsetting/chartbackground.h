@@ -1,9 +1,9 @@
 #ifndef CHARTBACKGROUND_H
 #define CHARTBACKGROUND_H
 
-#include <chartsetting/chartbox.h>
-#include <chartsetting/backgroundborder.h>
-#include <chartsetting/backgroundarea.h>
+#include "chartbox.h"
+#include "backgroundborder.h"
+#include "backgroundarea.h"
 
 class ChartBackground : public ChartBox
 {
@@ -15,5 +15,4 @@ private:
     BackgroundArea * mBackgroundArea;
     BackgroundBorder * mBackgroundBorder;
 };
-
 #endif // CHARTBACKGROUND_H

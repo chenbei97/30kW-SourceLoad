@@ -1,11 +1,11 @@
 #ifndef RADIALGRADIENTPARAMWIDGET_H
 #define RADIALGRADIENTPARAMWIDGET_H
 
-#include <chartsetting/gradientparamwidget.h>
-#include <chartsetting/gradientparamspinbox.h>
 #include <QFormLayout>
 #include <QHash>
 #include <QCheckBox>
+#include "gradientparamwidget.h"
+#include "gradientparamspinbox.h"
 
 class RadialGradientParamWidget : public GradientParamWidget
 {

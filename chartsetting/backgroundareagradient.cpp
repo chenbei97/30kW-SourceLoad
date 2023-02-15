@@ -1,4 +1,4 @@
-#include <chartsetting/backgroundareagradient.h>
+#include "backgroundareagradient.h"
 
 BackgroundAreaGradient ::BackgroundAreaGradient (QChart*chart,const QIcon&icon,QWidget *parent) :
     QGroupBox(parent),mChart(chart),mIcon(icon)

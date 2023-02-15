@@ -75,6 +75,8 @@ SOURCES += \
     chartview/associatebaraxis.cpp \
     chartview/associatebarmode.cpp \
     chartview/associatebarseries.cpp \
+    chartview/associatepiemode.cpp \
+    chartview/associatepieseries.cpp \
     chartview/associatexyaxis.cpp \
     chartview/associatexymode.cpp \
     chartview/associatexyseries.cpp \
@@ -84,6 +86,7 @@ SOURCES += \
     chartview/chartview.cpp \
     chartview/lineassociatetable.cpp \
     chartview/linechartbar.cpp \
+    chartview/pieassociatetable.cpp \
     chartview/piechartbar.cpp \
     chartview/scatterassociatetable.cpp \
     chartview/scatterchartbar.cpp \
@@ -128,6 +131,7 @@ SOURCES += \
     seriessetting/seriesbox.cpp \
     seriessetting/seriesinfo.cpp \
     seriessetting/seriespie.cpp \
+    seriessetting/seriespieslice.cpp \
     seriessetting/seriesscatter.cpp \
     seriessetting/seriessetting.cpp \
     seriessetting/seriesxy.cpp \
@@ -196,6 +200,8 @@ HEADERS += \
     chartview/associatebaraxis.h \
     chartview/associatebarmode.h \
     chartview/associatebarseries.h \
+    chartview/associatepiemode.h \
+    chartview/associatepieseries.h \
     chartview/associatexyaxis.h \
     chartview/associatexymode.h \
     chartview/associatexyseries.h \
@@ -205,6 +211,7 @@ HEADERS += \
     chartview/chartview.h \
     chartview/lineassociatetable.h \
     chartview/linechartbar.h \
+    chartview/pieassociatetable.h \
     chartview/piechartbar.h \
     chartview/scatterassociatetable.h \
     chartview/scatterchartbar.h \
@@ -247,6 +254,7 @@ HEADERS += \
     seriessetting/seriesbox.h \
     seriessetting/seriesinfo.h \
     seriessetting/seriespie.h \
+    seriessetting/seriespieslice.h \
     seriessetting/seriesscatter.h \
     seriessetting/seriessetting.h \
     seriessetting/seriesxy.h \

@@ -1,4 +1,4 @@
-#include <chart/scatterchart.h>
+#include "scatterchart.h"
 
 ScatterChart::ScatterChart(QTableView * tableview,QWidget *parent)
     :QMainWindow(parent),mTableView(tableview)

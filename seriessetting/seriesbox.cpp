@@ -1,4 +1,4 @@
-#include <seriessetting/seriesbox.h>
+#include "seriesbox.h"
 
 SeriesBox::SeriesBox(QChart *chart,QWidget*parent):
     QGroupBox(parent),mChart(chart),mCurrentSeriesId(0)

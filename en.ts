@@ -211,6 +211,112 @@
     </message>
 </context>
 <context>
+    <name>AssociatePieMode</name>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="7"/>
+        <source>关联</source>
+        <translation>Associate</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="9"/>
+        <source>关联模式</source>
+        <translation>Associate Mode</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="10"/>
+        <source>行表头关联</source>
+        <translation>RowHeaderMode</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="11"/>
+        <source>列表头关联</source>
+        <translation>ColHeaderMode</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="12"/>
+        <source>行区域关联</source>
+        <translation>RowRegionMode</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="13"/>
+        <source>列区域关联</source>
+        <translation>ColRegionMode</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="23"/>
+        <source>关联设置</source>
+        <translation>Associate Setting</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="31"/>
+        <source>关联列数</source>
+        <translation>colIndex</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="34"/>
+        <source>关联行数</source>
+        <translation>rowIndex</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="50"/>
+        <source>标签行</source>
+        <translation>labelRow</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="52"/>
+        <source>数值行</source>
+        <translation>valueRow</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="54"/>
+        <source>起始列</source>
+        <translation>firstCol</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="56"/>
+        <source>列数</source>
+        <translation>colCount</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="71"/>
+        <source>标签列</source>
+        <translation>labelCol</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="73"/>
+        <source>数值列</source>
+        <translation>valueCol</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="75"/>
+        <source>起始行</source>
+        <translation>firstRow</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepiemode.cpp" line="77"/>
+        <source>行数</source>
+        <translation>rowCount</translation>
+    </message>
+</context>
+<context>
+    <name>AssociatePieSeries</name>
+    <message>
+        <location filename="chartview/associatepieseries.cpp" line="6"/>
+        <source>曲线</source>
+        <translation>Curve</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepieseries.cpp" line="18"/>
+        <source>&amp;饼洞比例</source>
+        <translation>&amp;holesize</translation>
+    </message>
+    <message>
+        <location filename="chartview/associatepieseries.cpp" line="19"/>
+        <source>&amp;标签位置</source>
+        <translation>&amp;labelposition</translation>
+    </message>
+</context>
+<context>
     <name>AssociateSeries</name>
     <message>
         <source>曲线</source>
@@ -427,17 +533,17 @@
 <context>
     <name>AxisBarCategory</name>
     <message>
-        <location filename="axissetting/axisbarcategory.cpp" line="7"/>
+        <location filename="axissetting/axisbarcategory.cpp" line="6"/>
         <source>清空类别</source>
         <translation>clearCategories</translation>
     </message>
     <message>
-        <location filename="axissetting/axisbarcategory.cpp" line="8"/>
+        <location filename="axissetting/axisbarcategory.cpp" line="7"/>
         <source>设置类别</source>
         <translation>setCategories</translation>
     </message>
     <message>
-        <location filename="axissetting/axisbarcategory.cpp" line="20"/>
+        <location filename="axissetting/axisbarcategory.cpp" line="19"/>
         <source>类别轴</source>
         <translation>barType</translation>
     </message>
@@ -539,62 +645,62 @@
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="76"/>
+        <location filename="axissetting/axisinfo.cpp" line="82"/>
         <source>左对齐</source>
         <translation>AlignLeft</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="77"/>
+        <location filename="axissetting/axisinfo.cpp" line="83"/>
         <source>右对齐</source>
         <translation>AlignRight</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="78"/>
+        <location filename="axissetting/axisinfo.cpp" line="84"/>
         <source>顶部对齐</source>
         <translation>AlignTop</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="79"/>
+        <location filename="axissetting/axisinfo.cpp" line="85"/>
         <source>底部对齐</source>
         <translation>AlignBottom</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="87"/>
+        <location filename="axissetting/axisinfo.cpp" line="93"/>
         <source>水平</source>
         <translation>Horizontal</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="87"/>
+        <location filename="axissetting/axisinfo.cpp" line="93"/>
         <source>垂直</source>
         <translation>Vertical</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="95"/>
+        <location filename="axissetting/axisinfo.cpp" line="101"/>
         <source>无坐标轴</source>
         <translation>NoAxis</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="96"/>
+        <location filename="axissetting/axisinfo.cpp" line="102"/>
         <source>线性坐标轴</source>
         <translation>ValueAxis</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="97"/>
+        <location filename="axissetting/axisinfo.cpp" line="103"/>
         <source>条形坐标轴</source>
         <translation>BarAxis</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="98"/>
+        <location filename="axissetting/axisinfo.cpp" line="104"/>
         <source>类别坐标轴</source>
         <translation>CategoryAxis</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="99"/>
+        <location filename="axissetting/axisinfo.cpp" line="105"/>
         <source>时间坐标轴</source>
         <translation>DateTimeAxis</translation>
     </message>
     <message>
-        <location filename="axissetting/axisinfo.cpp" line="100"/>
+        <location filename="axissetting/axisinfo.cpp" line="106"/>
         <source>对数坐标轴</source>
         <translation>LogAxis</translation>
     </message>
@@ -715,7 +821,7 @@
         <translation type="vanished">Other</translation>
     </message>
     <message>
-        <location filename="axissetting/axislog.cpp" line="110"/>
+        <location filename="axissetting/axislog.cpp" line="119"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
@@ -728,17 +834,17 @@
         <translation>Other</translation>
     </message>
     <message>
-        <location filename="axissetting/axissetting.cpp" line="104"/>
+        <location filename="axissetting/axissetting.cpp" line="114"/>
         <source>X轴</source>
         <translation>Axis X</translation>
     </message>
     <message>
-        <location filename="axissetting/axissetting.cpp" line="105"/>
+        <location filename="axissetting/axissetting.cpp" line="115"/>
         <source>Y轴</source>
         <translation>Axis Y</translation>
     </message>
     <message>
-        <location filename="axissetting/axissetting.cpp" line="116"/>
+        <location filename="axissetting/axissetting.cpp" line="126"/>
         <source>当前轴</source>
         <translation>Current Axis</translation>
     </message>
@@ -1430,42 +1536,42 @@
 <context>
     <name>ChartViewWidget</name>
     <message>
-        <location filename="tool/chartview_tool.cpp" line="32"/>
+        <location filename="tool/chartview_tool.cpp" line="30"/>
         <source>导入文件</source>
         <translation>Import File</translation>
     </message>
     <message>
-        <location filename="tool/chartview_tool.cpp" line="33"/>
+        <location filename="tool/chartview_tool.cpp" line="31"/>
         <source>文件带表头?</source>
         <translation>File With Header?</translation>
     </message>
     <message>
-        <location filename="tool/chartview_tool.cpp" line="64"/>
+        <location filename="tool/chartview_tool.cpp" line="62"/>
         <source>折线图</source>
         <translation>LineChart</translation>
     </message>
     <message>
-        <location filename="tool/chartview_tool.cpp" line="65"/>
+        <location filename="tool/chartview_tool.cpp" line="63"/>
         <source>散点图</source>
         <translation>ScatterChart</translation>
     </message>
     <message>
-        <location filename="tool/chartview_tool.cpp" line="66"/>
+        <location filename="tool/chartview_tool.cpp" line="64"/>
         <source>柱状图</source>
         <translation>BarChart</translation>
     </message>
     <message>
-        <location filename="tool/chartview_tool.cpp" line="67"/>
+        <location filename="tool/chartview_tool.cpp" line="65"/>
         <source>饼图</source>
         <translation>PieChart</translation>
     </message>
     <message>
-        <location filename="tool/chartview_tool.cpp" line="105"/>
+        <location filename="tool/chartview_tool.cpp" line="103"/>
         <source>Txt/Csv文件</source>
         <translation>Txt/Csv Files</translation>
     </message>
     <message>
-        <location filename="tool/chartview_tool.cpp" line="105"/>
+        <location filename="tool/chartview_tool.cpp" line="103"/>
         <source>*.txt *.csv</source>
         <translation>*.txt *.csv</translation>
     </message>
@@ -2675,9 +2781,17 @@ You can view the existing numbers by traversing the button list~</translation>
     </message>
 </context>
 <context>
+    <name>PieAssociateTable</name>
+    <message>
+        <location filename="chartview/pieassociatetable.cpp" line="16"/>
+        <source>关联</source>
+        <translation>Relate</translation>
+    </message>
+</context>
+<context>
     <name>PieChartTool</name>
     <message>
-        <location filename="charttool/piecharttool.cpp" line="8"/>
+        <location filename="charttool/piecharttool.cpp" line="9"/>
         <source>饼图没有坐标轴,无需进行设置~</source>
         <translation>The pie has no axis, so it does&apos;t need to be set~</translation>
     </message>
@@ -3108,12 +3222,12 @@ You can view the existing numbers by traversing the button list~</translation>
         <translation>Bar</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesbar.cpp" line="170"/>
+        <location filename="seriessetting/seriesbar.cpp" line="179"/>
         <source>设置颜色</source>
         <translation>Set Color</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesbar.cpp" line="179"/>
+        <location filename="seriessetting/seriesbar.cpp" line="188"/>
         <source>设置格式</source>
         <translation>Set Font</translation>
     </message>
@@ -3125,32 +3239,32 @@ You can view the existing numbers by traversing the button list~</translation>
 <context>
     <name>SeriesBarSet</name>
     <message>
-        <location filename="seriessetting/seriesbarset.cpp" line="16"/>
+        <location filename="seriessetting/seriesbarset.cpp" line="17"/>
         <source>设置系列颜色</source>
         <translation>SetBarColor</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesbarset.cpp" line="20"/>
+        <location filename="seriessetting/seriesbarset.cpp" line="21"/>
         <source>&amp;当前系列</source>
         <translation>&amp;CurrentBar</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesbarset.cpp" line="21"/>
+        <location filename="seriessetting/seriesbarset.cpp" line="22"/>
         <source>&amp;系列和数</source>
         <translation>&amp;BarSum</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesbarset.cpp" line="22"/>
+        <location filename="seriessetting/seriesbarset.cpp" line="23"/>
         <source>&amp;系列颜色</source>
         <translation>&amp;BarColor</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesbarset.cpp" line="24"/>
+        <location filename="seriessetting/seriesbarset.cpp" line="25"/>
         <source>系列</source>
         <translation>BarSet</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesbarset.cpp" line="124"/>
+        <location filename="seriessetting/seriesbarset.cpp" line="126"/>
         <source>设置颜色</source>
         <translation>Set Color</translation>
     </message>
@@ -3245,50 +3359,163 @@ You can view the existing numbers by traversing the button list~</translation>
 <context>
     <name>SeriesPie</name>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="43"/>
+        <location filename="seriessetting/seriespie.cpp" line="47"/>
         <source>&amp;系列和数</source>
         <translation>&amp;PieSum</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="44"/>
+        <location filename="seriessetting/seriespie.cpp" line="48"/>
         <source>&amp;标签位置</source>
         <translation>&amp;LabelPosition</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="45"/>
+        <location filename="seriessetting/seriespie.cpp" line="49"/>
         <source>&amp;饼洞比例</source>
         <translation>&amp;HoleSize</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="46"/>
+        <location filename="seriessetting/seriespie.cpp" line="50"/>
         <source>&amp;饼块比例</source>
         <translation>&amp;PieSize</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="47"/>
+        <location filename="seriessetting/seriespie.cpp" line="51"/>
         <source>&amp;水平位置</source>
         <translation>&amp;HorPosition</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="48"/>
+        <location filename="seriessetting/seriespie.cpp" line="52"/>
         <source>&amp;垂直位置</source>
         <translation>&amp;VerPosition</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="49"/>
+        <location filename="seriessetting/seriespie.cpp" line="53"/>
         <source>&amp;起始角度</source>
         <oldsource>起始角度</oldsource>
         <translation>&amp;StartAngle</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="50"/>
+        <location filename="seriessetting/seriespie.cpp" line="54"/>
         <source>&amp;终止角度</source>
         <translation>&amp;EndAngle</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriespie.cpp" line="52"/>
+        <location filename="seriessetting/seriespie.cpp" line="56"/>
         <source>饼图</source>
         <translation>Pie</translation>
+    </message>
+</context>
+<context>
+    <name>SeriesPieSlice</name>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="36"/>
+        <source>设置标签格式</source>
+        <translation>SetLabelFont</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="38"/>
+        <source>设置标签颜色</source>
+        <translation>SetLabelColor</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="40"/>
+        <source>设置填充颜色</source>
+        <translation>SetFillColor</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="42"/>
+        <source>设置边框颜色</source>
+        <translation>SetBorderColor</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="44"/>
+        <source>设置标签名称</source>
+        <translation>SetLabelName</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="49"/>
+        <source>&amp;当前系列</source>
+        <translation>&amp;CurrentSlice</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="50"/>
+        <source>&amp;当前数值</source>
+        <translation>&amp;CurrentValue</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="51"/>
+        <source>&amp;当前比例</source>
+        <translation>&amp;CurrentRate</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="52"/>
+        <source>&amp;当前始角</source>
+        <translation>&amp;CurrentAngle</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="53"/>
+        <source>&amp;当前跨度</source>
+        <translation>&amp;CurrentSpan</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="54"/>
+        <source>&amp;标签可见</source>
+        <translation>&amp;LabelVisible</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="55"/>
+        <source>&amp;标签距离</source>
+        <translation>&amp;LabelDistance</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="56"/>
+        <source>&amp;标签格式</source>
+        <translation>&amp;LabelFont</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="57"/>
+        <source>&amp;标签颜色</source>
+        <translation>&amp;LabelColor</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="58"/>
+        <source>&amp;填充颜色</source>
+        <translation>&amp;FillColor</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="59"/>
+        <source>&amp;饼块突出</source>
+        <translation>&amp;Exploded</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="60"/>
+        <source>&amp;饼块距离</source>
+        <translation>&amp;ExplodeFactor</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="61"/>
+        <source>&amp;边框宽度</source>
+        <translation>&amp;BorderWidth</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="62"/>
+        <source>&amp;边框颜色</source>
+        <translation>&amp;BorderColor</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="71"/>
+        <source>系列</source>
+        <translation>PieSlice</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="325"/>
+        <source>设置颜色</source>
+        <translation>Set Color</translation>
+    </message>
+    <message>
+        <location filename="seriessetting/seriespieslice.cpp" line="334"/>
+        <source>设置格式</source>
+        <translation>Set Font</translation>
     </message>
 </context>
 <context>
@@ -3329,7 +3556,7 @@ You can view the existing numbers by traversing the button list~</translation>
         <translation>Marker</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesscatter.cpp" line="129"/>
+        <location filename="seriessetting/seriesscatter.cpp" line="147"/>
         <source>设置颜色</source>
         <translation>Set Color</translation>
     </message>
@@ -3342,17 +3569,17 @@ You can view the existing numbers by traversing the button list~</translation>
         <translation>Current Curve</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriessetting.cpp" line="33"/>
+        <location filename="seriessetting/seriessetting.cpp" line="35"/>
         <source>移除</source>
         <translation>remove</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriessetting.cpp" line="36"/>
+        <location filename="seriessetting/seriessetting.cpp" line="38"/>
         <source>&amp;切换曲线</source>
         <translation>&amp;Toggle Curve</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriessetting.cpp" line="37"/>
+        <location filename="seriessetting/seriessetting.cpp" line="39"/>
         <source>&amp;移除曲线</source>
         <translation>&amp;Remove Curve</translation>
     </message>
@@ -3424,12 +3651,12 @@ You can view the existing numbers by traversing the button list~</translation>
         <translation>Points</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesxy.cpp" line="230"/>
+        <location filename="seriessetting/seriesxy.cpp" line="249"/>
         <source>设置颜色</source>
         <translation>Set Color</translation>
     </message>
     <message>
-        <location filename="seriessetting/seriesxy.cpp" line="239"/>
+        <location filename="seriessetting/seriesxy.cpp" line="258"/>
         <source>设置格式</source>
         <translation>SetFont</translation>
     </message>

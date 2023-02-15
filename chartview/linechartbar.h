@@ -1,8 +1,9 @@
 #ifndef LINECHARTBAR_H
 #define LINECHARTBAR_H
 
-#include <chartview/chartbar.h>
-#include <chartview/lineassociatetable.h>
+#include "chartbar.h"
+#include "lineassociatetable.h"
+
 class LineChartBar : public ChartBar
 {
     Q_OBJECT
