@@ -210,7 +210,7 @@ Makefile: ../30kW-SourceLoad.pro E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/win32-g++/q
 		E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/qt_config.prf \
 		E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.conf \
 		E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/spec_post.prf \
-		.qmake.stash \
+		../.qmake.stash \
 		E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/exclusive_builds.prf \
 		E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/toolchain.prf \
 		E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/default_pre.prf \
@@ -393,7 +393,7 @@ E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/qt_functions.prf:
 E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/qt_config.prf:
 E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.conf:
 E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/spec_post.prf:
-.qmake.stash:
+../.qmake.stash:
 E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/exclusive_builds.prf:
 E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/toolchain.prf:
 E:/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/default_pre.prf:
@@ -436,7 +436,6 @@ all: debug-all release-all  FORCE
 clean: debug-clean release-clean  FORCE
 distclean: debug-distclean release-distclean  FORCE
 	-$(DEL_FILE) Makefile
-	-$(DEL_FILE) .qmake.stash
 
 debug-mocclean:
 	$(MAKE) -f $(MAKEFILE).Debug mocclean
