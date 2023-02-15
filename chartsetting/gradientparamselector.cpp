@@ -1,4 +1,4 @@
-#include <chartsetting/gradientparamselector.h>
+#include "gradientparamselector.h"
 
 GradientParamSelector::GradientParamSelector(QWidget *parent)
     : QWidget(parent),mButton(new ColorButton),mLabel(new QLabel(""))

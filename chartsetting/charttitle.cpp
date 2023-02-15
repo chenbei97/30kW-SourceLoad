@@ -1,4 +1,4 @@
-#include <chartsetting/charttitle.h>
+#include "charttitle.h"
 
 ChartTitle::ChartTitle(QChart *chart,const QIcon& icon,QWidget*parent):ChartBox(chart,icon,parent)
 {

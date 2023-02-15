@@ -1,4 +1,4 @@
-#include <chartsetting/foregroundborder.h>
+#include "foregroundborder.h"
 
 ForegroundBorder::ForegroundBorder(QChart* chart,const QIcon&icon,QWidget *parent) :
     QWidget(parent),mChart(chart),mIcon(icon)

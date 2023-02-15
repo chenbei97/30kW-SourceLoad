@@ -1,4 +1,4 @@
-#include <chartsetting/colorbutton.h>
+#include "colorbutton.h"
 
 ColorButton::ColorButton(QWidget*parent):QPushButton(parent),mColor(Qt::white),mSize(QSize(40,40))
 {

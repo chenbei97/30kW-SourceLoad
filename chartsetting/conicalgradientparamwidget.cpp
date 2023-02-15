@@ -1,4 +1,4 @@
-#include <chartsetting/conicalgradientparamwidget.h>
+#include "conicalgradientparamwidget.h"
 
 ConicalGradientParamWidget::ConicalGradientParamWidget(QWidget*parent):
     GradientParamWidget (QGradient::ConicalGradient,parent)

@@ -1,4 +1,4 @@
-#include <chartsetting/gradientparamselectorwidget.h>
+#include "gradientparamselectorwidget.h"
 
 GradientParamSelectorWidget::GradientParamSelectorWidget(QWidget *parent) : QWidget(parent),mBarCount(11)
 {

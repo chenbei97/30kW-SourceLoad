@@ -1,4 +1,4 @@
-#include <chartsetting/chartsetting.h>
+#include "chartsetting.h"
 
 ChartSetting::ChartSetting(QChart* chart):mChart(chart)
 {

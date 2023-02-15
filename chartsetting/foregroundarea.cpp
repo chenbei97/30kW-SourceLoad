@@ -1,4 +1,4 @@
-#include <chartsetting/foregroundarea.h>
+#include "foregroundarea.h"
 
 ForegroundArea::ForegroundArea(QChart* chart,const QIcon&icon,QWidget *parent) :
     QGroupBox(parent),mChart(chart),mIcon(icon)

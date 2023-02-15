@@ -1,4 +1,4 @@
-#include <chartsetting/gradientparamwidget.h>
+#include "gradientparamwidget.h"
 
 GradientParamWidget ::GradientParamWidget (QGradient::Type type,QWidget *parent) : QWidget(parent),mGradientType(type)
 {

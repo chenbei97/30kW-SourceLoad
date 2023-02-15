@@ -1,4 +1,4 @@
-#include <chartsetting/chartanimation.h>
+#include "chartanimation.h"
 
 ChartAnimation::ChartAnimation(QChart *chart,const QIcon& icon,QWidget*parent):ChartBox(chart,icon,parent)
 {

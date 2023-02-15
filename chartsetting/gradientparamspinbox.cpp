@@ -1,4 +1,4 @@
-#include <chartsetting/gradientparamspinbox.h>
+#include "gradientparamspinbox.h"
 
 GradientParamSpinBox::GradientParamSpinBox(QWidget*parent):QDoubleSpinBox(parent)
 {

@@ -1,4 +1,4 @@
-#include<chartsetting/chartbackground.h>
+#include "chartbackground.h"
 
 ChartBackground::ChartBackground(QChart *chart,const QIcon& icon,QWidget*parent):ChartBox(chart,icon,parent)
 {

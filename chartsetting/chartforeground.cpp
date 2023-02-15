@@ -1,4 +1,4 @@
-#include <chartsetting/chartforeground.h>
+#include "chartforeground.h"
 
 ChartForeground::ChartForeground(QChart *chart,const QIcon& icon,QWidget*parent)
     :ChartBox(chart,icon,parent)
