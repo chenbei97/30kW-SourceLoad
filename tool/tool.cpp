@@ -1,4 +1,4 @@
-#include <tool/tool.h>
+#include "tool.h"
 
 Tool::Tool(QWidget *parent) : QWidget(parent)
 {

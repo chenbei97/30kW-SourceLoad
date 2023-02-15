@@ -7,7 +7,7 @@
 #include <QHBoxLayout>
 #include <QFormLayout>
 #include <QLabel>
-#include <tool/tableviewmodel.h>
+#include "../tool/tableviewmodel.h"
 using namespace QtCharts;
 
 class AssociateBarMode : public QGroupBox

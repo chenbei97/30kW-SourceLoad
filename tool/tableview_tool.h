@@ -10,10 +10,10 @@
 #include <QAction>
 #include <QStatusBar>
 #include <QSignalMapper>
-#include <table/table.h>
-#include <table/tablesizedialog.h>
-#include <table/tablecolordialog.h>
-#include <core/enum.h>
+#include "../table/table.h"
+#include "../table/tablesizedialog.h"
+#include "../table/tablecolordialog.h"
+#include "../core/enum.h"
 
 class TableViewWidget : public QMainWindow
 {

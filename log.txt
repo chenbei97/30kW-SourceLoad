@@ -472,6 +472,12 @@ QVector<QVariant> colData(int,int,int) const;
 不为0会调用setCurrentAxis和SetCurrentSeries，然后内部调用updateState()函数来更新工具栏的状态，不为0说明是来自关联表格动作发出的associateTable()
 如果为0，说明是清空动作或者导入文件发出的，无论哪种就会导致mChart->series().count()==0，然后调用disconnectAllConnections()再返回
 之前不返回，就会导致连接还起作用，但是连接的槽函数内部都会操作mCurrentAxis和mCurrentSeries就会导致异常
+之前的测试是曲线设置工具栏异常，但是坐标轴不异常，坐标轴没有发生异常的原因似乎是当初在axissetting初始化时把mChart->axisX()强转指针赋给了axisbox
+继承axisbox的那些工具类其实内部都复制了这样一个指针，虽然图表清空后mChart->axisX()为空指针,但是工具类内部的mCurrentAxis并没同步变为空
+而mChart->series()被移除后会让mCurrentSeries同步丢失，这2个指针是同一个地址
+至于为何mCurrentAxis并没同步变为空不再追究了，总之都使用disconnectAllConnections()来解决此问题
+② 时间轴的支持不再提供，关于绘图模块的全部功能基本上结束
+③ 完成所有翻译的更新，然后同步迁徙到VS
 
 
 

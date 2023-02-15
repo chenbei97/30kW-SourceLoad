@@ -6,8 +6,8 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <QGroupBox>
-#include <tool/tableview_tool.h>
-#include <tool/chartview_tool.h>
+#include "tableview_tool.h"
+#include "chartview_tool.h"
 
 class Tool : public QWidget
 {
