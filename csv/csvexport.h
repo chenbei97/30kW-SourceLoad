@@ -1,14 +1,16 @@
-#ifndef CSVEXPORT_H
+﻿#ifndef CSVEXPORT_H
 #define CSVEXPORT_H
+
 #include <QFile>
 #include <QDir>
-#include <QObject>
 #include <QTextStream>
 #include <QFileDialog>
 #include <QString>
 #include <QTextCodec>
 #include <QMessageBox>
-#include <QDebug>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 class CSVExport : public QObject
 {

@@ -1,9 +1,9 @@
-#ifndef LOG_H
+﻿#ifndef LOG_H
 #define LOG_H
 
-#include <log/logfixedprocessor.h>
-#include <log/logmonitorprocessor.h>
-#include <log/logterminalprocessor.h>
+#include "logfixedprocessor.h"
+#include "logmonitorprocessor.h"
+#include "logterminalprocessor.h"
 
 class Log : public QObject
 {

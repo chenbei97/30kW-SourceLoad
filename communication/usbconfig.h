@@ -1,4 +1,4 @@
-#ifndef USBCONFIG_H
+﻿#ifndef USBCONFIG_H
 #define USBCONFIG_H
 
 #include <QObject>
@@ -20,12 +20,12 @@
 #include <QDebug>
 
 static constexpr char blankString[] = QT_TRANSLATE_NOOP("SerialConfig", "N/A");
-// 在SerialConfig上下文环境空白字符串翻译为N/A
+
 class UsbConfig : public QDialog
 {
       Q_OBJECT
 public:
-        struct Settings //串口配置参数
+        struct Settings
         {
             QString Name;
             qint32 BaudRate;

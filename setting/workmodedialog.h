@@ -1,4 +1,4 @@
-#ifndef WORKMODEDIALOG_H
+﻿#ifndef WORKMODEDIALOG_H
 #define WORKMODEDIALOG_H
 
 #include <QDialog>
@@ -8,8 +8,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGroupBox>
-#include <QDebug>
-#include <core/enum.h>
+#include "../core/enum.h"
 
 class WorkModeDialog : public QDialog
 {

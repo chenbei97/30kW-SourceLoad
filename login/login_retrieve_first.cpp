@@ -1,4 +1,7 @@
-#include <login/login_retrieve_password.h>
+﻿#include "login_retrieve_password.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 RetrieveFirst::RetrieveFirst(QWidget * parent):QDialog(parent)
   , TipLabel(new QLabel(tr("第一步"))), UserNameLabel(new QLabel(tr("请输入用户名：")))

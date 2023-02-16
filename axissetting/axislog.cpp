@@ -1,4 +1,7 @@
-#include "axislog.h"
+﻿#include "axislog.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 AxisLog::AxisLog(QChart * chart,QWidget*parent):
     QGroupBox(parent),mChart(chart),mCurrentAxis(nullptr)

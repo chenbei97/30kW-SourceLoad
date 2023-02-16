@@ -1,4 +1,7 @@
-#include "gradientparamselectorwidget.h"
+﻿#include "gradientparamselectorwidget.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 GradientParamSelectorWidget::GradientParamSelectorWidget(QWidget *parent) : QWidget(parent),mBarCount(11)
 {

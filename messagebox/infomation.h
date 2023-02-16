@@ -1,7 +1,7 @@
-#ifndef INFOMATION_H
+﻿#ifndef INFOMATION_H
 #define INFOMATION_H
 
-#include <messagebox/messagebox.h>
+#include "messagebox.h"
 
 class Infomation : public Messagebox
 {
@@ -9,7 +9,7 @@ class Infomation : public Messagebox
 private:
     typedef void (Infomation::*ButtonSlotClassFunc)();
     void test();
-    void setSlotClassFunction(ButtonSlotClassFunc, int); // 内部使用不被继承
+    void setSlotClassFunction(ButtonSlotClassFunc, int);
 public:
     explicit Infomation();
 };

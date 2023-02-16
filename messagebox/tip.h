@@ -1,4 +1,4 @@
-#ifndef TIP_H
+﻿#ifndef TIP_H
 #define TIP_H
 
 #include <QDialog>
@@ -7,8 +7,6 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QPushButton>
-//#include <QPaintEvent>
-//#include <QPainter>
 
 class Tip : public QDialog
 {
@@ -18,7 +16,6 @@ public:
     explicit Tip(const QString&);
     void setTip(const QString&);
 private:
-    //void paintEvent(QPaintEvent *) override;
     void init();
     QLabel * mTip;
     QPushButton * mBtn;

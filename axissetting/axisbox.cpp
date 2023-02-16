@@ -1,4 +1,7 @@
-#include "axisbox.h"
+﻿#include "axisbox.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 AxisBox::AxisBox(QChart *chart,QAbstractAxis*axis, const QIcon&icon,QWidget*parent):
     QGroupBox(parent),mChart(chart),mCurrentAxis(axis),mIcon(icon)

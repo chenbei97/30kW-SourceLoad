@@ -1,4 +1,7 @@
-#include "screenshoot.h"
+﻿#include "screenshoot.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ScreenShoot::ScreenShoot(QChartView*chartview,QWidget*parent):QDialog(parent),mChartView(chartview)
 {

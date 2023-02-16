@@ -1,7 +1,6 @@
-#ifndef TOOL_H
+﻿#ifndef TOOL_H
 #define TOOL_H
 
-#include <QWidget>
 #include <QHBoxLayout>
 #include <QGridLayout>
 #include <QPushButton>

@@ -1,4 +1,7 @@
-#include <login/login_retrieve_password.h>
+﻿#include "login_retrieve_password.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 RetrieveThird::RetrieveThird(QWidget * parent):QDialog(parent),TipLabel(new QLabel(tr("第三步")))
  , NewPwdLabel(new QLabel(tr("请输入新密码："))), NewPwdEdit(new QLineEdit)

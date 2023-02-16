@@ -1,7 +1,8 @@
-#ifndef MONITORSPINBOX_H
+﻿#ifndef MONITORSPINBOX_H
 #define MONITORSPINBOX_H
 
 #include <QDoubleSpinBox>
+
 class MonitorSpinBox : public QDoubleSpinBox
 {
     Q_OBJECT

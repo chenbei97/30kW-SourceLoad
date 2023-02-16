@@ -1,9 +1,9 @@
-#ifndef SPICCOMMAND_H
+﻿#ifndef SPICCOMMAND_H
 #define SPICCOMMAND_H
 #include <QHash>
 #include <QByteArray>
 #include <QString>
-#include <core/enum.h>
+#include "enum.h"
 
 namespace SPICCOMAND {
 

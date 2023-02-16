@@ -1,4 +1,4 @@
-#include <login/login_retrieve_password.h>
+﻿#include "login_retrieve_password.h"
 
 RetrievePassword::RetrievePassword(QObject *parent) : QObject(parent)
 , FirstWindow(new RetrieveFirst), SecondWindow(new RetrieveSecond), ThirdWindow(new RetrieveThird)

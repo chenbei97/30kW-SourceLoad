@@ -1,10 +1,14 @@
-#ifndef PYTEST_SPEC_OBJLAYER_TEST_H
+﻿#ifndef PYTEST_SPEC_OBJLAYER_TEST_H
 #define PYTEST_SPEC_OBJLAYER_TEST_H
+
 #include <Python.h>
 #include <QDebug>
 #include <QList>
-#include <test/pytest_spec_datatype_api.h>
-#include <test/pytest_spec_funcobj_api.h>
+#include "pytest_spec_datatype_api.h"
+#include "pytest_spec_funcobj_api.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 enum class DATATYPE_TEST {LongTest,BoolTest,FloatTest,ByteTest,UnicodeTest,
                           TupleTest,ListTest,DictTest,SetTest,StructSeqTest,FuncTest};

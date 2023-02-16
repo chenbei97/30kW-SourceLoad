@@ -1,10 +1,12 @@
-#include <test/test.h>
-#include <mainwindow.h>
-#include <login/login.h>
-#include <QApplication>
+﻿#include <QApplication>
 #include <QTextCodec>
 #include <QProcess>
-#include <chartview/chartcoordtip.h>
+#include "mainwindow.h"
+//#include "test/test.h"
+#include "login/login.h"
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
+# pragma execution_character_set("utf-8")
+#endif
 
 QTranslator *translator=Q_NULLPTR;
 

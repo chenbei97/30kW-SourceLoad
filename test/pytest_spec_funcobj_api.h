@@ -1,8 +1,12 @@
-#ifndef PYTEST_SPEC_FUNCOBJ_API_H
+﻿#ifndef PYTEST_SPEC_FUNCOBJ_API_H
 #define PYTEST_SPEC_FUNCOBJ_API_H
+
 #include <Python.h>
 #include <QDebug>
 #include <datetime.h>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 //#include <pytest/pytest_print.h>
 
 // API接口：https://docs.python.org/zh-cn/3.7/c-api/concrete.html

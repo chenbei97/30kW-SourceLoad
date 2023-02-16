@@ -1,9 +1,10 @@
-#ifndef DATA_PROCESSING_H
+﻿#ifndef DATA_PROCESSING_H
 #define DATA_PROCESSING_H
 
 #include <QDebug>
 #include <QPair>
-#include <core/enum.h>
+#include "enum.h"
+
 
 class ResponseProcessor : public QObject
 {
@@ -53,11 +54,11 @@ inline void ResponseProcessor::setData(const QByteArray &data)
 
 inline void ResponseProcessor::setTerminalCommand(const QByteArray & c)
 {
-    mCommand = c; // 当前是否有查询命令,如果有此时收到的回复是有意义的,同时也是为了把命令和值合并一起发出去
+    mCommand = c;
 }
 
 inline void ResponseProcessor::addRequestCount(Controller c)
-{// 说明查询次数增加1次
+{
     switch (c) {
         case Controller::MonitorQuery: ++mMonitorCounter.first;break;
         case Controller::TerminalQuery: ++mTerminalCounter.first;break;
@@ -65,7 +66,7 @@ inline void ResponseProcessor::addRequestCount(Controller c)
 }
 
 inline void ResponseProcessor::addResponseCount(Controller c)
-{// 说明回复次数增加1次
+{
     switch (c) {
         case Controller::MonitorQuery: ++mMonitorCounter.second;break;
         case Controller::TerminalQuery: ++mTerminalCounter.second;break;

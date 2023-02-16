@@ -1,4 +1,4 @@
-#ifndef BACKGROUNDAREA_H
+﻿#ifndef BACKGROUNDAREA_H
 #define BACKGROUNDAREA_H
 
 #include <QRadioButton>
@@ -22,7 +22,7 @@ private:
     void initBrushStyleComboBox(QComboBox*);
     QChart * mChart;
     QIcon mIcon;
-    BackgroundAreaGradient * mBackgroundAreaGradient; // 用于背景渐变填充用的
+    BackgroundAreaGradient * mBackgroundAreaGradient;
     QGradient::InterpolationMode mGradientInterpolation;
     QGradient::CoordinateMode mGradientCoordinate;
     QGradient::Spread mGradientSpread;

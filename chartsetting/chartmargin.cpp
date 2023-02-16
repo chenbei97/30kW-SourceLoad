@@ -1,4 +1,7 @@
-#include "chartmargin.h"
+﻿#include "chartmargin.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ChartMargin::ChartMargin(QChart *chart,const QIcon& icon,QWidget*parent):ChartBox(chart,icon,parent)
 {

@@ -1,4 +1,4 @@
-#ifndef LOGPROCESSOR_H
+﻿#ifndef LOGPROCESSOR_H
 #define LOGPROCESSOR_H
 
 #include <QDateTime>
@@ -8,8 +8,9 @@
 #include <QtConcurrent>
 #include <QTextStream>
 #include <QApplication>
-#include <core/enum.h>
 #include <QDebug>
+#include "../core/enum.h"
+
 using namespace QtConcurrent;
 
 class LogProcessor : public QObject

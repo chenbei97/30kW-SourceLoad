@@ -1,4 +1,7 @@
-#include "tool.h"
+﻿#include "tool.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 Tool::Tool(QWidget *parent) : QWidget(parent)
 {
@@ -17,7 +20,6 @@ Tool::Tool(QWidget *parent) : QWidget(parent)
     mStartPlotBtn = new QPushButton(tr("启动绘图工具"));
     mMainLayout = new QVBoxLayout(this);
 
-    QPushButton * A = new QPushButton("启动AA工具");
     QPushButton * B = new QPushButton("启动BB工具");
     QPushButton * C = new QPushButton("启动CC工具");
     QPushButton * D = new QPushButton("启动DD工具");
@@ -26,7 +28,6 @@ Tool::Tool(QWidget *parent) : QWidget(parent)
     QHBoxLayout * lay1 = new QHBoxLayout;
     lay1->addWidget(mStartTableBtn);
     lay1->addWidget(mStartPlotBtn);
-    //lay1->addWidget(A);
     box1->setLayout(lay1);
 
     QGroupBox * box2 = new QGroupBox;

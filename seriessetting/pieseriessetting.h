@@ -1,4 +1,4 @@
-#ifndef PIESERIESSETTING_H
+﻿#ifndef PIESERIESSETTING_H
 #define PIESERIESSETTING_H
 
 #include "seriessetting.h"
@@ -14,7 +14,6 @@ public:
 private:
     QChart * mChart;
     QPieSeries * mCurrentSeries;
-    //SeriesSetting * mGenericSetting; // 不要通用设置,因为饼图无需切换曲线
     SeriesInfo * mInfo;
     SeriesPie * mPie;
     SeriesPieSlice * mPieSlice;

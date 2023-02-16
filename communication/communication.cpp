@@ -1,4 +1,7 @@
-#include <communication/communication.h>
+﻿#include "communication.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 Communication::Communication(QWidget * parent) :QDialog(parent),
     mWorkMode(WORKMODE::CV),mCommunicationType(Type::None)

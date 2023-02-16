@@ -1,4 +1,7 @@
-#include <login/login_create_account.h>
+﻿#include "login_create_account.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 CreateAccount::CreateAccount(QWidget * parent) : QDialog(parent)
  , mainLayout(new QGridLayout(this)),UserNameLabel(new QLabel(tr("用户名：")))

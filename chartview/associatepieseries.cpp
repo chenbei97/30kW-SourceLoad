@@ -1,4 +1,7 @@
-#include "associatepieseries.h"
+﻿#include "associatepieseries.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 AssociatePieSeries::AssociatePieSeries(QWidget*parent):QGroupBox(parent)
 {

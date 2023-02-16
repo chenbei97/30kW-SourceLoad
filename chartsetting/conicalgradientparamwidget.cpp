@@ -1,4 +1,7 @@
-#include "conicalgradientparamwidget.h"
+﻿#include "conicalgradientparamwidget.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ConicalGradientParamWidget::ConicalGradientParamWidget(QWidget*parent):
     GradientParamWidget (QGradient::ConicalGradient,parent)

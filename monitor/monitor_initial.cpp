@@ -1,4 +1,7 @@
-#include <monitor/monitor.h>
+﻿#include "monitor.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 void Monitor::initCommonUI() // 布局初始化的公共部分
 {

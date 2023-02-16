@@ -1,4 +1,7 @@
-#include <monitor/monitor_spinbox.h>
+﻿#include "monitor_spinbox.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 // spinbox组件想要设置固定宽度和高度
 MonitorSpinBox::MonitorSpinBox(QWidget * parent):QDoubleSpinBox(parent)

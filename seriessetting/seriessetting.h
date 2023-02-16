@@ -1,10 +1,10 @@
-#ifndef SERIESSETTING_H
+﻿#ifndef SERIESSETTING_H
 #define SERIESSETTING_H
 
 #include "seriesinfo.h"
 
 class SeriesSetting : public QVBoxLayout
-{ // 通用曲线设置
+{
     Q_OBJECT
 public:
     explicit SeriesSetting(QChart*);

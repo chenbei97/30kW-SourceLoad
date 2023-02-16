@@ -1,4 +1,4 @@
-#ifndef AXISLABEL_H
+﻿#ifndef AXISLABEL_H
 #define AXISLABEL_H
 
 #include "axisbox.h"
@@ -13,7 +13,7 @@ public:
 private:
     void updateState() override;
     QCheckBox * mAxisLabelVisibility;
-    GradientParamSpinBox * mAxisLabelAngle;// 借助内部重载的wheelEvent
+    GradientParamSpinBox * mAxisLabelAngle;
     QPushButton * mAxisLabelColor;
     QComboBox * mAxisLabelBrush;
     QPushButton * mAxisLabelFont;

@@ -1,4 +1,7 @@
-#include "charttoolwidget.h"
+﻿#include "charttoolwidget.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ChartToolWidget::ChartToolWidget(QWidget *parent) : QWidget(parent)
 {

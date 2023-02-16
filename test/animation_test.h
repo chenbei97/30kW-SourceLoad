@@ -1,5 +1,6 @@
-#ifndef ANIMATION_TEST_H
+﻿#ifndef ANIMATION_TEST_H
 #define ANIMATION_TEST_H
+
 #include <QPropertyAnimation>
 #include <QAnimationGroup>
 #include <QSequentialAnimationGroup>
@@ -12,7 +13,9 @@
 #include <QEasingCurve>
 #include <QFinalState>
 #include <QState>
-#include <QObject>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 namespace  AnimationTest {
      void pushbutton_animation()

@@ -1,6 +1,7 @@
-#ifndef LOGFIXEDPROCESSOR_H
+﻿#ifndef LOGFIXEDPROCESSOR_H
 #define LOGFIXEDPROCESSOR_H
-#include <log/logprocessor.h>
+
+#include "logprocessor.h"
 
 class LogFixedProcessor : public LogProcessor
 {

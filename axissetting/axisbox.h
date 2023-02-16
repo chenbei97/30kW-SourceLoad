@@ -1,4 +1,4 @@
-#ifndef AXISBOX_H
+﻿#ifndef AXISBOX_H
 #define AXISBOX_H
 
 #include <QGroupBox>
@@ -16,10 +16,11 @@
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QSpinBox>
-#include <QDebug>
 using namespace QtCharts;
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
-// 和chartbox完全一样,只是为了对称性保持风格一致
 class AxisBox : public QGroupBox
 {
     Q_OBJECT

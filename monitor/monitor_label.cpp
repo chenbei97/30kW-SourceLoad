@@ -1,4 +1,7 @@
-#include <monitor/monitor_label.h>
+﻿#include "monitor_label.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 // QPalette VolatgePalette = ShowVoltage->palette();VolatgePalette.setColor(QPalette::Background,Qt::red);howVoltage->setPalette(VolatgePalette);
 // setPalette不能控制颜色,setFont不能控制大小
 // 如果想固定宽度可以指定this，不过我这里还是想要跟随QSplitter的变化所以不设定固定宽度和高度

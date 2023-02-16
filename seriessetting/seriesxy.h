@@ -1,4 +1,4 @@
-#ifndef SERIESXY_H
+﻿#ifndef SERIESXY_H
 #define SERIESXY_H
 
 #include <QGroupBox>
@@ -19,7 +19,7 @@
 using namespace QtCharts;
 
 class SeriesXY: public QGroupBox
-{ // scatter和value的共同设置
+{
     Q_OBJECT
 public:
     explicit SeriesXY(QChart *,QWidget* = Q_NULLPTR);
@@ -52,7 +52,7 @@ private:
 
     QColorDialog* colorDialog(const QColor&);
     QFontDialog* fontDialog(const QFont&);
-    QComboBox * brushStyleCombo(); // 曲线用不到
+    QComboBox * brushStyleCombo();
 
     void updatePointVisible();
     void updatePointLabelsVisible();

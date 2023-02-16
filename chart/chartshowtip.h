@@ -1,4 +1,4 @@
-#ifndef CHARTSHOWTIP_H
+﻿#ifndef CHARTSHOWTIP_H
 #define CHARTSHOWTIP_H
 
 #include <QGraphicsSimpleTextItem>
@@ -6,7 +6,7 @@
 #include <QtCharts>
 using namespace  QtCharts;
 
-class ChartShowTip : public QObject //要继承否则报错
+class ChartShowTip : public QObject //Inherit or report an error
 {
     Q_OBJECT
 public:

@@ -1,5 +1,8 @@
-#include <csv/csvexport.h>
+﻿#include "csvexport.h"
 #include <Python.h>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 void CSVExport::writeTablePy(const char *  header,const char *  content)
 {
@@ -77,7 +80,6 @@ QString CSVExport::importCsvPy()
         //PyArg_Parse(pret,"s",&ret); // 用PyArg_Parse或者PyUnicode_AsUTF8都不行
         //printf("%s\n",ret);
         QString res = QString::fromLocal8Bit(ret); // 必须用fromLocal8Bit,不能用fromUtf8/fromLatin1,也不能直接返回QString(ret)
-        qDebug()<<res;
         Py_Finalize();
         return res;
 }

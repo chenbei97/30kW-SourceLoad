@@ -1,13 +1,13 @@
-#ifndef CHARTCOORDTIP_H
+﻿#ifndef CHARTCOORDTIP_H
 #define CHARTCOORDTIP_H
 
 #include <QGraphicsItem>
 #include <QPainter>
-#include <QtCharts/QChart>
+#include <QtCharts>
 using namespace QtCharts;
 
-class ChartCoordTip : public QObject,public QGraphicsItem // 必须继承QObject且放在第1个
-{//no member named 'staticMetaObject
+class ChartCoordTip : public QObject,public QGraphicsItem
+{
     Q_OBJECT
 public:
     explicit ChartCoordTip(QChart *chart);

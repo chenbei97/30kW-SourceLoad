@@ -1,4 +1,7 @@
-#include "chart.h"
+﻿#include "chart.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 Chart::Chart(QGraphicsItem *parent, Qt::WindowFlags flags)
     : QChart(QChart::ChartTypeCartesian, parent, flags) // 笛卡尔坐标系

@@ -1,11 +1,11 @@
-#ifndef QUERY_H
+﻿#ifndef QUERY_H
 #define QUERY_H
 
 #include <QIODevice>
 #include <QCoreApplication>
 #include <QDebug>
-#include <core/data_processing.h>
-#include <core/spic_command.h>
+#include "../core/data_processing.h"
+#include "../core/spic_command.h"
 
 using namespace SPICCOMAND;
 
@@ -25,7 +25,7 @@ public:
 
     virtual bool isOpen();
 
-    static void setController(ResponseProcessor::Controller); // 非虚函数不要重载
+    static void setController(ResponseProcessor::Controller);
     static ResponseProcessor::Controller controller();
 
 protected:

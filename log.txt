@@ -480,10 +480,22 @@ QVector<QVariant> colData(int,int,int) const;
 ③ 完成所有翻译的更新，然后同步迁徙到VS
 
 
+2023/2/16：
+① 使用msvc编译Qt工程，解决字符集的问题
+QtCreator：要在工具里边选用"有utf则添加"，其次所有用到中文字符的文件都使用以下代码即可
+#if defined(_MSC_VER) && (_MSC_VER >= 1600) 
+# pragma execution_character_set("utf-8") 
+#endif
+VS：工具内找到C/C++的高级，忽略警告4819；其次在命令行输入额外参数"%(AdditionalOptions)/utf-8"可以解决编码问题
+② 如果环境变量没有以下路径，直接双击exe是不能运行的，但是又希望不通过bin的依赖就能执行，需要把bin下的Qt5的依赖复制到debug目录下
+E:\Qt5.9.9\5.9.9\msvc2017_64\bin
+E:\Qt5.9.9\5.9.9\mingw53_32\bin
+注意：不同编译器虽然依赖名称相同，但是内部实际是不同的。
 
-
-
-
+1）对于mingw的依赖有：libgcc_s_dw2-1.dll、libstdc++-6.dll、libwinpthread-1.dll、Qt5Chartsd.dll、Qt5Concurrentd.dll、
+Qt5Cored.dll、Qt5Guid.dll、Qt5Networkd.dll、Qt5SerialPortd.dll、Qt5Widgetsd.dll、Qt5Xmld.dll共11个文件
+其中3个是共同依赖，不分debug和release，另外8个区分
+2）对于MSVC同理，但是没有那3个，另外8个需要依赖，区分debug和release
 
 
 

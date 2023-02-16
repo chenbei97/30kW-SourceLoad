@@ -1,4 +1,4 @@
-#ifndef SETTING_H
+﻿#ifndef SETTING_H
 #define SETTING_H
 
 #include <QDialog>
@@ -8,9 +8,9 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <QDebug>
-#include <setting/workmodedialog.h>
-#include <setting/logperiod.h>
-#include <setting/querypanel.h>
+#include "workmodedialog.h"
+#include "logperiod.h"
+#include "querypanel.h"
 
 class Setting : public QDialog
 {

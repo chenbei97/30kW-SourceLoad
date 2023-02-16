@@ -1,4 +1,4 @@
-#ifndef CHARTSETTING_H
+﻿#ifndef CHARTSETTING_H
 #define CHARTSETTING_H
 
 #include "charttitle.h"
@@ -8,7 +8,6 @@
 #include "chartbackground.h"
 #include "chartforeground.h"
 
-// chartsetting没有子类,所有曲线类型均可用
 class ChartSetting : public QVBoxLayout
 {
     Q_OBJECT

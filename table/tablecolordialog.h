@@ -1,4 +1,4 @@
-#ifndef TABLECOLORDIALOG_H
+﻿#ifndef TABLECOLORDIALOG_H
 #define TABLECOLORDIALOG_H
 
 #include <QDialog>
@@ -7,7 +7,6 @@
 #include <QLabel>
 #include <QPalette>
 #include <QColorDialog>
-#include <QDebug>
 
 class TableColorDialog : public QDialog
 {

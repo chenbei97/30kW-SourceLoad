@@ -1,4 +1,7 @@
-#include "chartlegend.h"
+﻿#include "chartlegend.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ChartLegend::ChartLegend(QChart *chart,const QIcon& icon,QWidget*parent)
     :ChartBox(chart,icon,parent)

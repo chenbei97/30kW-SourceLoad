@@ -1,4 +1,7 @@
-#include "tableviewmodel.h"
+﻿#include "tableviewmodel.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 TableViewModel::TableViewModel(QObject *parent):QAbstractTableModel(parent)
 { // 参加编程手册 https://doc.qt.io/qt-5/model-view-programming.html

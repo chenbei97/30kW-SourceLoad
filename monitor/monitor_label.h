@@ -1,5 +1,6 @@
-#ifndef MONITORLABEL_H
+﻿#ifndef MONITORLABEL_H
 #define MONITORLABEL_H
+
 #include <QLabel>
 class MonitorLabel : public QLabel
 {

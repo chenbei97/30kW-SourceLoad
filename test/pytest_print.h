@@ -1,6 +1,10 @@
-#ifndef PYTEST_PRINT_H
+﻿#ifndef PYTEST_PRINT_H
 #define PYTEST_PRINT_H
-#include <test/pytest_print_test.h>
+
+#include "pytest_print_test.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 // 一个便利函数打印各种类型的PyObject
 void print_pyobject(PyObject *py_obj)
 {

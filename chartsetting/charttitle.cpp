@@ -1,4 +1,7 @@
-#include "charttitle.h"
+﻿#include "charttitle.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ChartTitle::ChartTitle(QChart *chart,const QIcon& icon,QWidget*parent):ChartBox(chart,icon,parent)
 {

@@ -1,4 +1,4 @@
-#ifndef PIEASSOCIATETABLE_H
+﻿#ifndef PIEASSOCIATETABLE_H
 #define PIEASSOCIATETABLE_H
 
 #include <QDialog>
@@ -26,8 +26,8 @@ private:
     void setSeriesProperties(QPieSeries*);
     void onSeriesColorChanged(QColor,int);
     AssociateMode mAssociateMode;
-    QPair<int,int> mRegionLabelValue;//事先记录区域模式下要映射的标签和数值所在行/列位置
-    int mFlagValue;// 事先记录非区域模式下要映射的行/列位置
+    QPair<int,int> mRegionLabelValue;//First record the row/column position of the label and value to be mapped in the region mode
+    int mFlagValue;// Record the row/column position to be mapped in non-region mode in advance
     QTableView * mTableView;
     TableViewModel * mTableModel;
     QChartView *mChartView;

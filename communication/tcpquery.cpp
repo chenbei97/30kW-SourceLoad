@@ -1,4 +1,7 @@
-#include <communication/tcpquery.h>
+﻿#include "tcpquery.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 TcpQuery::TcpQuery(Query *parent) : Query(parent)
 {

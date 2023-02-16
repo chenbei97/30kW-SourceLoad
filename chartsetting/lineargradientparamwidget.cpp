@@ -1,4 +1,7 @@
-#include "lineargradientparamwidget.h"
+﻿#include "lineargradientparamwidget.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 LinearGradientParamWidget ::LinearGradientParamWidget(QWidget*parent):
     GradientParamWidget (QGradient::LinearGradient,parent)

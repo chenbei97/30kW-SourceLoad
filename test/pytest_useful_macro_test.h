@@ -1,6 +1,10 @@
-#ifndef PYTEST_USEFUL_MACRO_TEST_H
+﻿#ifndef PYTEST_USEFUL_MACRO_TEST_H
 #define PYTEST_USEFUL_MACRO_TEST_H
-#include <test/pytest_useful_macro_api.h>
+
+#include "pytest_useful_macro_api.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 enum class USEFULLMACRO_TEST{UsefullMacroTest,RefCountTest};
 

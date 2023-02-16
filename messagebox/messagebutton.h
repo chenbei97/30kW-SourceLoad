@@ -1,5 +1,6 @@
-#ifndef MESSAGEBUTTON_H
+﻿#ifndef MESSAGEBUTTON_H
 #define MESSAGEBUTTON_H
+
 #include <QPushButton>
 
 class MessageButton : public QObject

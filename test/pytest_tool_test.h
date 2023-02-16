@@ -1,6 +1,10 @@
-#ifndef PYTEST_TOOL_TEST_H
+﻿#ifndef PYTEST_TOOL_TEST_H
 #define PYTEST_TOOL_TEST_H
-#include <test/pytest_tool_api.h>
+
+#include "pytest_tool_api.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 enum class TOOL_TEST {ImportTest,ArgTest,ConversionTest};
 

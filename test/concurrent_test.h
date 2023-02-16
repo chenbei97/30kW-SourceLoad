@@ -1,5 +1,6 @@
-#ifndef CONCURRENT_TEST_H
+﻿#ifndef CONCURRENT_TEST_H
 #define CONCURRENT_TEST_H
+
 #include <QtConcurrent/QtConcurrent>
 #include <QFuture>
 #include <QFutureWatcher>
@@ -15,7 +16,10 @@
 #include  <random>
 #include <tuple>
 #include <functional>
-#include <core/list_files.h>
+#include "../core/list_files.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 using namespace QtConcurrent;
 
@@ -350,7 +354,7 @@ namespace ConCurrentTest {
               QObject::connect(&dialog, &QProgressDialog::canceled, &futureWatcher, &QFutureWatcher<void>::cancel);// 如果进度条人为点击取消那么结束任务,不过是异步的可以使用waitForFinshed同步
 
               std::function<void(int&)> spin = [](int&iteration) { // 一个匿名函数,参数int&,返回void被std::function打包成1个函数
-                  const long long work = 100000 * 100000 * 400; // spin作为map的映射函数,因为是原地映射,所以输入参数必须是引用且返回void
+                  const long long work = 1000 * 1000 * 1000; // spin作为map的映射函数,因为是原地映射,所以输入参数必须是引用且返回void
                   volatile long long v = 0;//内存可见性是指当一个线程修改了某个变量的值，其它线程总是能知道这个变量变化，可以使用加锁或者volatile关键字
                   for (long long j = 0; j < work; ++j) // iteration就是vector的每个值(不一定按照顺序)
                       ++v;

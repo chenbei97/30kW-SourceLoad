@@ -1,4 +1,7 @@
-#include "chartshowlegend.h"
+﻿#include "chartshowlegend.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ChartShowLegend::ChartShowLegend(QObject*parent):
     QObject(parent),mShowLegend(true)

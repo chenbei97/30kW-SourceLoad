@@ -1,4 +1,7 @@
-#include "seriesbarset.h"
+﻿#include "seriesbarset.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 SeriesBarSet::SeriesBarSet(QChart * chart,QWidget* parent):
     QGroupBox(parent),mChart(chart),mCurrentSeries(nullptr)

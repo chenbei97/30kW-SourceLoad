@@ -1,4 +1,4 @@
-#ifndef LOGIN_H
+﻿#ifndef LOGIN_H
 #define LOGIN_H
 
 #include <QLabel>
@@ -17,9 +17,9 @@
 #include <QXmlStreamReader>
 #include <QFile>
 #include <QDir>
-#include <login/login_create_account.h>
-#include <login/login_retrieve_password.h>
-#include <messagebox/infomation.h>
+#include "login_create_account.h"
+#include "login_retrieve_password.h"
+#include "../messagebox/infomation.h"
 
 class Login : public QDialog
 {
@@ -31,8 +31,8 @@ protected:
     void mousePressEvent(QMouseEvent*e);
     void mouseMoveEvent(QMouseEvent*e);
     void mouseReleaseEvent(QMouseEvent*e);
-    bool mMouseMove = false; // 窗口是否在鼠标操作下移动
-    QPoint mMouseLastPos; // 上次的鼠标位置
+    bool mMouseMove = false;
+    QPoint mMouseLastPos;
 private:
     QLabel * UserNameLabel;
     QLineEdit * UserNameEdit;
@@ -50,7 +50,7 @@ private:
     bool IsExist;
     QString mUserName;
     QString mPassWord;
-    int tryCount; // 尝试输入次数
+    int tryCount;
     RetrievePassword * mPaswordModifier;
 };
 

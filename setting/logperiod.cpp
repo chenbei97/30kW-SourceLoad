@@ -1,4 +1,7 @@
-#include <setting/logperiod.h>
+﻿#include "logperiod.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 LogPeriod::LogPeriod(QWidget*parent):QDialog(parent)
 {
@@ -223,7 +226,7 @@ void LogPeriod::emitPeriod(QString period)
            if (val < 0.5) //临界值0.5m=30s=30000ms,即<30000ms使用ms传递
            {
                quint32 ms = qRound(val * 60000); // 转为ms传递
-               qDebug()<<ms<<"ms/m";
+               //qDebug()<<ms<<"ms/m";
                mPeriod.ms = ms;mPeriod.s = 0;mPeriod.m = 0;mPeriod.h = 0;
                emit selectedPeriod(ms);
            }

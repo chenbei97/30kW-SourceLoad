@@ -1,4 +1,7 @@
-﻿#include <table/tablesizedialog.h>
+﻿#include "tablesizedialog.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 TableSizeDialog::TableSizeDialog(QWidget * parent):QDialog(parent)
 {

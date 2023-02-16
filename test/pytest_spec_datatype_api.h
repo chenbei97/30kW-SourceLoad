@@ -1,9 +1,12 @@
-#ifndef PYTEST_SPEC_DATATYPE_API_H
+﻿#ifndef PYTEST_SPEC_DATATYPE_API_H
 #define PYTEST_SPEC_DATATYPE_API_H
-#include <Python.h>
-#include <test/pytest_print.h>
-#include <QDebug>
 
+#include <Python.h>
+#include <QDebug>
+#include "pytest_print.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 // API接口：https://docs.python.org/zh-cn/3.7/c-api/concrete.html
 // 这里涉及的是数值对象、序列对象、容器对象、
 

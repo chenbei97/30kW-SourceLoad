@@ -1,4 +1,7 @@
-#include "axisbarcategory.h"
+﻿#include "axisbarcategory.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 AxisBarCategory::AxisBarCategory(QChart * chart,QWidget*parent):
     QGroupBox(parent),mChart(chart),mCurrentAxis(nullptr),mCategoriesCount(0)

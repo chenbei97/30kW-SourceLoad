@@ -1,7 +1,6 @@
-#ifndef CHARTTOOLWIDGET_H
+﻿#ifndef CHARTTOOLWIDGET_H
 #define CHARTTOOLWIDGET_H
 
-#include <QWidget>
 #include <QVBoxLayout>
 #include <QScrollArea>
 #include <QGroupBox>

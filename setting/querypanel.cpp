@@ -1,4 +1,7 @@
-#include <setting/querypanel.h>
+﻿#include "querypanel.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 QueryPanel::QueryPanel(QWidget * parent):QDialog(parent)
 {

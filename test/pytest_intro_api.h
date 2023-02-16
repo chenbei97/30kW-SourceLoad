@@ -1,9 +1,12 @@
-#ifndef PYTEST_INTRO_API_H
+﻿#ifndef PYTEST_INTRO_API_H
 #define PYTEST_INTRO_API_H
-#include <Python.h>
-#include <test/pytest_print_test.h>
-#include <QString>
 
+#include <Python.h>
+#include <QString>
+#include "pytest_print_test.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 // 引入测试：引入python、引入python且引入第三方库
 /*
  * 要在object.h中添加2行代码,因为python定义的slots和qt定义的slots重合了

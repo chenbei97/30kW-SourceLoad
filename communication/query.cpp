@@ -1,4 +1,4 @@
-#include <communication/query.h>
+﻿#include "query.h"
 
 ResponseProcessor * Query::mProcessor = new ResponseProcessor;
 ResponseProcessor::Controller Query::mController  = ResponseProcessor::Controller::MonitorQuery;

@@ -1,7 +1,7 @@
-#ifndef LOGTERMINALPROCESSOR_H
+﻿#ifndef LOGTERMINALPROCESSOR_H
 #define LOGTERMINALPROCESSOR_H
 
-#include <log/logprocessor.h>
+#include "logprocessor.h"
 
 class LogTerminalProcessor : public LogProcessor
 {

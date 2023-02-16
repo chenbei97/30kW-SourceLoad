@@ -1,4 +1,4 @@
-#ifndef QUERYPANEL_H
+﻿#ifndef QUERYPANEL_H
 #define QUERYPANEL_H
 
 #include <QDialog>
@@ -12,8 +12,8 @@
 #include <QGroupBox>
 #include <QIODevice>
 #include <QTime>
-#include <messagebox/critical.h>
-#include <core/enum.h>
+#include "../messagebox/critical.h"
+#include "../core/enum.h"
 
 class QueryPanel : public QDialog
 {

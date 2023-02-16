@@ -1,8 +1,12 @@
-#ifndef PYTEST_AGREEMENT_API_H
+﻿#ifndef PYTEST_AGREEMENT_API_H
 #define PYTEST_AGREEMENT_API_H
+
 #include <Python.h>
 #include <QList>
 #include <QDebug>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 // 对象协议、数字协议、序列协议、映射协议、迭代器协议
 void test_obj_agreement()
@@ -86,7 +90,7 @@ void test_obj_agreement()
 
     PyObject* strlist = PyObject_Dir(pModule);
     printf("strlist is seq? %d\n",PySequence_Check(strlist));
-    printf("strlist's len = ? %d\n",PyObject_Length(strlist)); // 长度20
+    printf("strlist's len = ? %I64d\n",PyObject_Length(strlist)); // 长度20
     PyObject* list_iter =  PyObject_GetIter(strlist);
     QList <const char *> strlist_ret;
     while (1) {

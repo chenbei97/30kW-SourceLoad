@@ -1,4 +1,4 @@
-#ifndef TABLEVIEWWIDGET_H
+﻿#ifndef TABLEVIEWWIDGET_H
 #define TABLEVIEWWIDGET_H
 
 #include <QMainWindow>
@@ -26,7 +26,7 @@ private:
     void initConnections();
     void updateCellTextFont(const QModelIndex&);
 
-    struct CellTextFont { //默认左对齐/不加粗/不斜体,白底黑字
+    struct CellTextFont {
         bool bold = false;
         bool italic = false;
         Table::AlignType align = Table::AlignType::Left;

@@ -1,12 +1,7 @@
-#include <messagebox/infomation.h>
-
-//void func()
-//{
-//    Tip * tip = new Tip;
-//    tip->setTip("niubi");
-//    tip->exec();
-//    delete tip;
-//}
+﻿#include "infomation.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 Infomation::Infomation()
 {
@@ -42,8 +37,8 @@ void Infomation::test()
     MessageButton * button2 = new MessageButton;button2->setId(2);button2->setButtonName("B");addButton(button2);
     MessageButton * button3 = new MessageButton;button3->setId(3);button3->setButtonName("C");addButton(button3);
     MessageButton * button4 = new MessageButton;button4->setId(4);button4->setButtonName("D");addButton(button4);
-    qDebug()<<"id=5 button is exist? "<<!(button(5)==Q_NULLPTR); // 测试id=5是否存在,不存在j会返回空指针
-    qDebug()<<"id=2 button is exist? "<<!(button(2)==Q_NULLPTR) <<" name is "<<button(2)->buttonName();
+    //qDebug()<<"id=5 button is exist? "<<!(button(5)==Q_NULLPTR); // 测试id=5是否存在,不存在j会返回空指针
+    //qDebug()<<"id=2 button is exist? "<<!(button(2)==Q_NULLPTR) <<" name is "<<button(2)->buttonName();
     connect(button4->button(),&QPushButton::clicked,this,[=]{
         Tip*tip=new Tip;tip->setTip("谁创建了按钮谁就有义务绑定好对应的槽函数!");
         tip->exec();

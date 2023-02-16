@@ -1,4 +1,7 @@
-#include "axisinfo.h"
+﻿#include "axisinfo.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 AxisInfo::AxisInfo(QChart * chart,QAbstractAxis*axis,const QIcon&icon, QWidget*parent):
     AxisBox(chart,axis,icon,parent)

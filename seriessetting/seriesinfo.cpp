@@ -1,4 +1,7 @@
-#include "seriesinfo.h"
+﻿#include "seriesinfo.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 SeriesInfo::SeriesInfo(QChart * chart,QWidget*parent):
     SeriesBox(chart,parent)

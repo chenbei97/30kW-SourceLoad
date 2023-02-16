@@ -1,4 +1,7 @@
-#include "backgroundarea.h"
+﻿#include "backgroundarea.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 BackgroundArea::BackgroundArea(QChart* chart,const QIcon&icon,QWidget *parent) :
     QWidget(parent),mChart(chart),mIcon(icon)

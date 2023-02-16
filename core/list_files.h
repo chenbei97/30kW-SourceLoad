@@ -1,8 +1,10 @@
-#ifndef LIST_FILES_H
+﻿#ifndef LIST_FILES_H
 #define LIST_FILES_H
 #include <QStringList>
 #include <QDir>
-#include <QDebug>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 // 依据指定的过滤条件列出一个路径下的所有文件名
 QStringList listFiles(const QString &startDir, const QStringList &filters)

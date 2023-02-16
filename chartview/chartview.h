@@ -1,4 +1,4 @@
-#ifndef CHARTVIEW_H
+﻿#ifndef CHARTVIEW_H
 #define CHARTVIEW_H
 
 #include <QApplication>
@@ -21,8 +21,8 @@ protected:
     void resizeEvent(QResizeEvent *event);
 private:
     QChart * mChart;
-    bool mMouseMove; // 窗口是否在鼠标操作下移动
-    QPoint mMouseLastPos; // 上次的鼠标位置(是相对窗口的位置)
+    bool mMouseMove; // Whether the window moves under mouse operation
+    QPoint mMouseLastPos; // Last mouse position (relative to the window)
     QGraphicsSimpleTextItem *mCoordX;
     QGraphicsSimpleTextItem *mCoordY;
 };

@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QDialog>
@@ -19,11 +19,10 @@
 #include <QActionGroup>
 #include <QTranslator>
 #include <QSettings>
-#include <QDebug>
-#include <setting/setting.h>
-#include <communication/communication.h>
-#include <tool/tool.h>
-#include <monitor/monitor.h>
+#include "setting/setting.h"
+#include "communication/communication.h"
+#include "tool/tool.h"
+#include "monitor/monitor.h"
 
 class MainWindow : public QDialog
 {
@@ -38,7 +37,7 @@ private:
       Tool * mainTools;
       void init();
       void resizeEvent(QResizeEvent*) override;
-      void contextMenuEvent(QContextMenuEvent*) override;//右键菜单
+      void contextMenuEvent(QContextMenuEvent*) override;
       void paintEvent(QPaintEvent*) override;
       void closeEvent(QCloseEvent*) override;
       void initConnections();

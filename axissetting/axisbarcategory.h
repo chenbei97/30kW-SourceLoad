@@ -1,4 +1,4 @@
-#ifndef AXISBARCATEGORY_H
+﻿#ifndef AXISBARCATEGORY_H
 #define AXISBARCATEGORY_H
 
 #include <QGroupBox>

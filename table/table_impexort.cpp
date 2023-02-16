@@ -1,4 +1,7 @@
-#include <table/table.h>
+﻿#include "table.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 void Table::importTxt()
 {
@@ -167,15 +170,15 @@ void Table::importCsvOptim()
     showTips(tr("成功导入CSV文件!"));
 }
 
-void Table::importCsvExternel()
-{
-    QTime t;
-    t.start();
-    QString text = mCsvOpera.importCsv();// qDebug()<<text;  csv读取到的文本每行以\r\n作为结束符
-    QStringList content = text.split("\r\n",QString::SkipEmptyParts);//content 可能是空
-    importTable(content);
-    qDebug()<<"importCsvExternel cost time = "<<t.elapsed()/1000.0 <<"s"; // 没测试但是本质上应该和没优化的importCsv一个水平也就是114.653 s 实测118s
-}
+//void Table::importCsvExternel()
+//{
+//    QTime t;
+//    t.start();
+//    QString text = mCsvOpera.importCsv();// qDebug()<<text;  csv读取到的文本每行以\r\n作为结束符
+//    QStringList content = text.split("\r\n",QString::SkipEmptyParts);//content 可能是空
+//    importTable(content);
+//    qDebug()<<"importCsvExternel cost time = "<<t.elapsed()/1000.0 <<"s"; // 没测试但是本质上应该和没优化的importCsv一个水平也就是114.653 s 实测118s
+//}
 
 void Table::importTable(QStringList &content)
 {// 导入importTxt和importCsv共用的实际完成函数
@@ -320,42 +323,42 @@ void Table::exportCsv()
     showTips(tr("成功导出CSV文件!"));
 }
 
-void Table::exportCsvExternel()
-{
-    QTime t;
-    t.start();
-    QString header, content;
+//void Table::exportCsvExternel()
+//{
+//    QTime t;
+//    t.start();
+//    QString header, content;
 
-    // 首先写入表头,如果没有表头,这里会异常
-    QStandardItem * headerItem;
-    for (int c = 0; c<mTableSize.col; ++c)
-    {
-        headerItem =mStandardModel->horizontalHeaderItem(c);
-         if ( headerItem!= Q_NULLPTR) // 这层判断可以不要,nitModel()保证了一定有表头,默认1,2,3..排列,或者是importTxt导入的表头
-        {
-             QString text = headerItem->text()==""?"NULL":headerItem->text();//这层判断也可以不要,表头不会为空文本
-             if (c != mTableSize.col-1)
-                 header = header+ text + ","; // 文本用\t,CSV用,
-             else header  = header+ text+ "\n";// 最后1列换行
-         } // 这里优化成一遍循环就写入了ts流
-    }
+//    // 首先写入表头,如果没有表头,这里会异常
+//    QStandardItem * headerItem;
+//    for (int c = 0; c<mTableSize.col; ++c)
+//    {
+//        headerItem =mStandardModel->horizontalHeaderItem(c);
+//         if ( headerItem!= Q_NULLPTR) // 这层判断可以不要,nitModel()保证了一定有表头,默认1,2,3..排列,或者是importTxt导入的表头
+//        {
+//             QString text = headerItem->text()==""?"NULL":headerItem->text();//这层判断也可以不要,表头不会为空文本
+//             if (c != mTableSize.col-1)
+//                 header = header+ text + ","; // 文本用\t,CSV用,
+//             else header  = header+ text+ "\n";// 最后1列换行
+//         } // 这里优化成一遍循环就写入了ts流
+//    }
 
-    // 然后写入表格文本(这里能不能优化,不用双for来遍历？)
-    QStandardItem * item;
-    for (int r = 0; r < mTableSize.row; ++r)
-    {
-        for (int c = 0; c < mTableSize.col; ++c)
-        {
-                item = mStandardModel->item(r,c);
-                QString text = item->text()==""?"NULL":item->text();
+//    // 然后写入表格文本(这里能不能优化,不用双for来遍历？)
+//    QStandardItem * item;
+//    for (int r = 0; r < mTableSize.row; ++r)
+//    {
+//        for (int c = 0; c < mTableSize.col; ++c)
+//        {
+//                item = mStandardModel->item(r,c);
+//                QString text = item->text()==""?"NULL":item->text();
 
-                if (c != mTableSize.col-1)
-                    content  = content +  text + ",";
-                else content  = content + text + "\n"; // 最后1列换行
-        }
-    }
-    // 这里循环一遍计算了1次,进入mCsvOpera又循环1次计算所以慢
-    mCsvOpera.writeTable(header,content);
-    qDebug()<<"exportCsvExternel cost time = "<<t.elapsed()/1000.0 <<"s"; //
-}
+//                if (c != mTableSize.col-1)
+//                    content  = content +  text + ",";
+//                else content  = content + text + "\n"; // 最后1列换行
+//        }
+//    }
+//    // 这里循环一遍计算了1次,进入mCsvOpera又循环1次计算所以慢
+//    mCsvOpera.writeTable(header,content);
+//    qDebug()<<"exportCsvExternel cost time = "<<t.elapsed()/1000.0 <<"s"; //
+//}
 

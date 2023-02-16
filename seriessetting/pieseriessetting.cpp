@@ -1,4 +1,7 @@
-#include "pieseriessetting.h"
+﻿#include "pieseriessetting.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 PieSeriesSetting::PieSeriesSetting(QChart*chart):mChart(chart)
 {

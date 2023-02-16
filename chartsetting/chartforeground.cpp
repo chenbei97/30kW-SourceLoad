@@ -1,4 +1,7 @@
-#include "chartforeground.h"
+﻿#include "chartforeground.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ChartForeground::ChartForeground(QChart *chart,const QIcon& icon,QWidget*parent)
     :ChartBox(chart,icon,parent)

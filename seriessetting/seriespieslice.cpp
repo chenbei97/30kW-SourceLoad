@@ -1,4 +1,7 @@
-#include "seriespieslice.h"
+﻿#include "seriespieslice.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 SeriesPieSlice::SeriesPieSlice(QChart * chart,QWidget* parent):
     QGroupBox(parent),mChart(chart),mCurrentSeries(nullptr)

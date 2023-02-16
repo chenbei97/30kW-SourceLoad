@@ -1,4 +1,4 @@
-#ifndef CREATEACCOUNT_H
+﻿#ifndef CREATEACCOUNT_H
 #define CREATEACCOUNT_H
 
 #include <QLabel>
@@ -16,8 +16,9 @@
 #include <QDomDocument>
 #include <QPaintEvent>
 #include <QPainter>
-#include <messagebox/warning.h>
-#include <messagebox/critical.h>
+#include <QTextStream>
+#include "../messagebox/warning.h"
+#include "../messagebox/critical.h"
 
 class CreateAccount : public QDialog
 {

@@ -1,4 +1,4 @@
-#ifndef RETRIEVEPASSWORD_H
+﻿#ifndef RETRIEVEPASSWORD_H
 #define RETRIEVEPASSWORD_H
 
 #include <QLabel>
@@ -16,8 +16,8 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QDir>
-#include <messagebox/warning.h>
-#include <messagebox/critical.h>
+#include "../messagebox/warning.h"
+#include "../messagebox/critical.h"
 
 class RetrieveFirst;
 class RetrieveSecond;
@@ -34,7 +34,7 @@ private:
       RetrieveSecond * SecondWindow;
       RetrieveThird * ThirdWindow;
 signals:
-      void createAccount(); //这个需要通知login界面才定义的
+      void createAccount();
 };
 
 class RetrieveFirst: public QDialog
@@ -55,8 +55,8 @@ private:
       QPushButton * NextBtn;
       QPushButton * CancelBtn;
 signals:
-      void next(const QString& username,const QString& password); // 传递给二级窗口的用户和密码
-      void createAccount(); // 传递给登录窗口的信息
+      void next(const QString& username,const QString& password);
+      void createAccount();
 };
 
 class RetrieveSecond: public QDialog
@@ -64,7 +64,7 @@ class RetrieveSecond: public QDialog
       Q_OBJECT
 public:
       explicit RetrieveSecond(QWidget*parent = Q_NULLPTR);
-      void getUser(const QString& username,const QString& password); // 拿到第一步传递的用户信息
+      void getUser(const QString& username,const QString& password);
 protected:
       void paintEvent(QPaintEvent*e) override;
 private:
@@ -76,7 +76,7 @@ private:
       QPushButton * ResetBtn;
       QPushButton * EndBtn;
 signals:
-      void next(const QString &username);// 传递给三级窗口的用户名信息
+      void next(const QString &username);
 };
 
 class RetrieveThird: public QDialog
@@ -84,7 +84,7 @@ class RetrieveThird: public QDialog
       Q_OBJECT
 public:
       explicit RetrieveThird(QWidget*parent = Q_NULLPTR);
-      void getUseName(const QString& username); // 拿到第二步传递的用户信息
+      void getUseName(const QString& username);
 protected:
       void paintEvent(QPaintEvent*e) override;
 private:
@@ -97,6 +97,6 @@ private:
       QPushButton * OkBtn;
       QPushButton * CancelBtn;
 signals:
-      void back(); // 返回第二步的窗口/取消重置密码
+      void back();
 };
 #endif // RETRIEVEPASSWORD_H

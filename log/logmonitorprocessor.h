@@ -1,7 +1,7 @@
-#ifndef LOGMONITORPROCESSOR_H
+﻿#ifndef LOGMONITORPROCESSOR_H
 #define LOGMONITORPROCESSOR_H
-#include <log/logprocessor.h>
 
+#include "logprocessor.h"
 class LogMonitorProcessor : public LogProcessor
 {
     Q_OBJECT

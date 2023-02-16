@@ -1,14 +1,18 @@
-#ifndef TEST_H
+﻿#ifndef TEST_H
 #define TEST_H
-#include <test/pytest_intro_test.h> // 引入python和package测试
-#include <test/pytest_useful_macro_test.h> // Python.h提供的宏测试
-#include <test/pytest_tool_test.h> // 工具层测试:导入模块+解析参数并构建值变量+字符串转换与格式化
-#include <test/pytest_agreement_test.h> // 协议层测试: 对象协议+数字协议+序列协议+映射协议+迭代器协议
-#include <test/pytest_spec_objlayer_test.h> // 具体对象层测试
-#include <csv/csvexport_test.h> // CSV导入导出测试
-#include <test/concurrent_test.h> // 并行计算测试
-#include <test/listfiles_test.h> // 查找指定路径下所有文件名的测试
-#include <test/animation_test.h>
+
+#include "pytest_intro_test.h" // 引入python和package测试
+#include "pytest_useful_macro_test.h" // Python.h提供的宏测试
+#include "pytest_tool_test.h" // 工具层测试:导入模块+解析参数并构建值变量+字符串转换与格式化
+#include "pytest_agreement_test.h" // 协议层测试: 对象协议+数字协议+序列协议+映射协议+迭代器协议
+#include "pytest_spec_objlayer_test.h" // 具体对象层测试
+#include "../csv/csvexport_test.h" // CSV导入导出测试
+#include "concurrent_test.h" // 并行计算测试
+#include "listfiles_test.h" // 查找指定路径下所有文件名的测试
+#include "animation_test.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 namespace AllTest {
     /*-----------------------------------------*/

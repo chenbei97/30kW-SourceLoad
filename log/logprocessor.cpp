@@ -1,4 +1,7 @@
-#include <log/logprocessor.h>
+﻿#include "logprocessor.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 LogProcessor::LogProcessor(QObject *parent) : QObject(parent)
 {

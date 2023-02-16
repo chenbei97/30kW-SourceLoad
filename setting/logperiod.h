@@ -1,4 +1,4 @@
-#ifndef LOGPERIOD_H
+﻿#ifndef LOGPERIOD_H
 #define LOGPERIOD_H
 
 #include <QDialog>
@@ -11,11 +11,10 @@
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QCheckBox>
-#include <messagebox/infomation.h>
-#include <messagebox/critical.h>
-#include <messagebox/warning.h>
-#include <core/enum.h>
-#include <QDebug>
+#include "../messagebox/infomation.h"
+#include "../messagebox/critical.h"
+#include "../messagebox/warning.h"
+#include "../core/enum.h"
 
 class LogPeriod : public QDialog
 {

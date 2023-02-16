@@ -1,7 +1,12 @@
-#ifndef PYTEST_USEFUL_MACRO_API_H
+﻿#ifndef PYTEST_USEFUL_MACRO_API_H
 #define PYTEST_USEFUL_MACRO_API_H
+
 #include <Python.h>
 #include <QtCore>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
+
  // https://docs.python.org/zh-cn/3.7/c-api/intro.html#useful-macros
 // 测试<Python.h>提供的有用的宏
 enum class UNREACHABLE_Test {UNR1,UNR2,UNR3,UNR0};
@@ -37,7 +42,7 @@ void test_useful_macro(UNREACHABLE_Test unr)
     p.age = 5;
     p.name[0] = 'c';p.name[1] = 'h';p.name[2] = 'e';p.name[3] = 'n';
     p.salary = 13000.;
-    printf("people.salary's size = %d bytes\n",Py_MEMBER_SIZE(people,salary));
+    printf("people.salary's size = %d bytes\n",(int)Py_MEMBER_SIZE(people,salary));
     Q_UNUSED(p);
     // 参数必须为 [-128, 127] 或 [0, 255] 范围内的字符或整数类型
     // 这个宏将 c 强制转换为 unsigned char 返回
@@ -53,9 +58,9 @@ void test_useful_macro(UNREACHABLE_Test unr)
     int k = 0;
     PyObject* pk = PyLong_FromLong(k); // 这里pk依然显示未使用警告
     Q_UNUSED(pk);
-    PyObject * Py_UNUSED(pk);
-    PyObject* func(PyObject * Py_UNUSED(ignored));
-
+    //PyObject * Py_UNUSED(pk);
+    //PyObject* func(PyObject * Py_UNUSED(ignored));
+    //Q_UNUSED(func);
     // PyDoc_STRVAR(name, str) 创建一个可以在文档字符串中使用的名字为 name 的变量
     // 如果不和文档字符串一起构建 Python，该值将为空
     //PyDoc_STR(str)为给定的字符串输入创建一个文档字符串

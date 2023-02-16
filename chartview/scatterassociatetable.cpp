@@ -1,4 +1,7 @@
-#include "scatterassociatetable.h"
+﻿#include "scatterassociatetable.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ScatterAssociateTable::ScatterAssociateTable(QTableView*tableview,QChartView*chartview,QWidget*parent):
     QDialog(parent),mTableView(tableview),mChartView(chartview)
@@ -11,7 +14,7 @@ ScatterAssociateTable::ScatterAssociateTable(QTableView*tableview,QChartView*cha
 
     mMode = new AssociateXYMode(mTableModel);
     mSeries = new AssociateXYSeries;
-    mSeries->setLineWidthVisible(false); // 散点图设置标记大小即可,宽度没有意义
+    mSeries->setLineWidthVisible(false);
     mAxis = new AssociateXYAxis;
 
     mOkBtn = new QPushButton(tr("关联"));
@@ -152,7 +155,7 @@ void ScatterAssociateTable::setAxis(QScatterSeries *series,Qt::Alignment alignme
         type = mAxis->axisType().y();
     }
 
-    if (axis) mChartView->chart()->removeAxis(axis); // 首次设置还没有坐标轴
+    if (axis) mChartView->chart()->removeAxis(axis);
 
     switch (type) {
         case AssociateXYAxis::Value:
@@ -162,7 +165,7 @@ void ScatterAssociateTable::setAxis(QScatterSeries *series,Qt::Alignment alignme
                 break;
           case AssociateXYAxis::Log:
                 logAxis = new QLogValueAxis;
-                logAxis->setBase(2.); //默认
+                logAxis->setBase(2.);
                 auto base = alignment==Qt::AlignBottom?
                             mAxis->axisBase().x():mAxis->axisBase().y();
                 if (base != 1.0) logAxis->setBase(base);

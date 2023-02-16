@@ -1,19 +1,22 @@
-#ifndef CSVEXPORT_TEST_H
+﻿#ifndef CSVEXPORT_TEST_H
 #define CSVEXPORT_TEST_H
 #include <QString>
 #include <QDebug>
-#include <csv/csvexport.h>
+#include "csvexport.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 // 使用inline防止多重定义
 inline QString construct_writeHeader() // 用于测试的构造表头的函数
 {
-    return QStringLiteral("姓名,性别,年龄,学历,专业,籍贯,手机号\n");
+    return QString("姓名,性别,年龄,学历,专业,籍贯,手机号\n");
 }
 
 inline QString construct_writeContent() // 用于测试的构造内容的函数
 {
         //姓名,性别,年龄,学历,专业,籍贯,手机号
-     QString  content = QStringLiteral(
+     QString  content = QString(
                     "A,男,25,硕士,电气,北京,19801279791\n"
                     "B,女,26,大专,建筑,上海,19801279792\n"
                     "C,女,27,本科,财会,南京,19801279793\n"

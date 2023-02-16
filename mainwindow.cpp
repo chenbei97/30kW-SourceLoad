@@ -1,5 +1,8 @@
-#include <mainwindow.h>
+﻿#include "mainwindow.h"
 extern QTranslator * translator;
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 MainWindow::MainWindow(QWidget *parent):QDialog(parent)
 {

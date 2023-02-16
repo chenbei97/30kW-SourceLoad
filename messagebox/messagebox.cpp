@@ -1,4 +1,7 @@
-#include <messagebox/messagebox.h>
+﻿#include "messagebox.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 Messagebox::Messagebox(QWidget*parent):QDialog(parent)
 {

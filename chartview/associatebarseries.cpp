@@ -1,4 +1,7 @@
-#include "associatebarseries.h"
+﻿#include "associatebarseries.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 AssociateBarSeries::AssociateBarSeries(QWidget*parent):QGroupBox(parent)
 {

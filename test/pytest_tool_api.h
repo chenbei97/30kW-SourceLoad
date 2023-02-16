@@ -1,7 +1,11 @@
-#ifndef PYTEST_TOOL_API_H
+﻿#ifndef PYTEST_TOOL_API_H
 #define PYTEST_TOOL_API_H
+
 #include <Python.h>
 #include <QDir>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 // 工具层测试:导入模块+解析参数并构建值变量+字符串转换与格式化
 // 其他的工具如操作系统实用程序、系统功能、过程控制、数据 marshal 操作支持、
@@ -196,7 +200,7 @@ void test_analytic_arg()
         // （4.1）int ->float
         PyObject* nvoid_nvoid_if= PyObject_GetAttrString(pModule,"nvoid_nvoid_if");
         PyObject* nvoid_nvoid_if_ret= PyObject_CallFunction(nvoid_nvoid_if,"i",5); // 输入int=5
-        float nvoid_nvoid_if_ret_val = 0.1;
+        float nvoid_nvoid_if_ret_val = 0.1f;
         PyArg_Parse(nvoid_nvoid_if_ret,"f",&nvoid_nvoid_if_ret_val);
         printf("nvoid_nvoid(int)->float =>float = %.15f\n",nvoid_nvoid_if_ret_val);
         // 同理使用PyObject_CallObject也可以,但是要传递元组参数
@@ -259,7 +263,7 @@ void test_analytic_arg()
          //（4.5）int ->dict
         PyObject* nvoid_nvoid_id= PyObject_GetAttrString(pModule,"nvoid_nvoid_id");
         PyObject* nvoid_nvoid_id_ret = PyObject_CallFunction(nvoid_nvoid_id,"i",10);
-        printf("nvoid_nvoid(int)->dict is dict? %d size = %d\n",PyDict_Check(nvoid_nvoid_id_ret),PyDict_Size(nvoid_nvoid_id_ret));
+        printf("nvoid_nvoid(int)->dict is dict? %id size = %I64d\n",PyDict_Check(nvoid_nvoid_id_ret),PyDict_Size(nvoid_nvoid_id_ret));
 
         // ① 既然是字典就可以直接解析字典,使用PyDict_GetItemString来获取返回的字典指定key对应的val
         PyObject * key1 = PyDict_GetItemString(nvoid_nvoid_id_ret, "x");// 预期返回的字典key值是x和y
@@ -274,7 +278,8 @@ void test_analytic_arg()
         // 这里返回的参数没有元组,args=NULL,kw的格式是sdsd,定义在keywords内
         // 参数 kwlist 是一个NULL结尾的字符串，定义了可以接受的参数名，并从左到右与format中各个变量对应
         // 参考https://www.codenong.com/35068114/ 和 https://zhidao.baidu.com/question/319332190.html 这个问题暂时没解决
-        char *keywords[] = {"s","d","s","d",NULL};// 一维指针数组
+        char cc1[] = {'s'};char cc2[] = {'d'};char cc3[] = {'s'};char cc4[] = {'d'};
+        char *keywords[] = {cc1,cc2,cc3,cc4,NULL};// 一维指针数组
         char * kx = new char(1) ; char  *ky = new char(1) ;//这个是需要的否则程序异常
         double kxv , kyv;
         ok = PyArg_ParseTupleAndKeywords(NULL,nvoid_nvoid_id_ret,"sdsd",keywords,&kx,&kxv,&ky,&kyv);

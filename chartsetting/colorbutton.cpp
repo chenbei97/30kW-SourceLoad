@@ -1,4 +1,7 @@
-#include "colorbutton.h"
+﻿#include "colorbutton.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 ColorButton::ColorButton(QWidget*parent):QPushButton(parent),mColor(Qt::white),mSize(QSize(40,40))
 {

@@ -1,4 +1,7 @@
-#include "pieassociatetable.h"
+﻿#include "pieassociatetable.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 PieAssociateTable::PieAssociateTable(QTableView*tableview,QChartView*chartview,QWidget*parent):
     QDialog(parent),mTableView(tableview),mChartView(chartview)

@@ -1,5 +1,7 @@
-#ifndef TABLE_H
+﻿#ifndef TABLE_H
 #define TABLE_H
+
+#include <QObject>
 #include <QTableView>
 #include <QStandardItem>
 #include <QStandardItemModel>
@@ -9,23 +11,20 @@
 #include <QRegExp>
 #include <QDir>
 #include <QDebug>
-#include <QtConcurrent/QtConcurrent>
+#include <QtConcurrent>
 #include <QFuture>
 #include <QTime>
 #include <QPersistentModelIndex>
 #include <QThreadPool>
 #include <QApplication>
-#include <csv/csvexport.h>
-#include <messagebox/critical.h>
-#include <messagebox/infomation.h>
-#include <messagebox/warning.h>
-//Infomation * info = new Infomation;
-//info->setText(tr("取消导入Txt文件!"));
-//info->setTextWrapIndent(2,24);
-//info->exec();
-//delete info;
+#include "../messagebox/critical.h"
+#include "../messagebox/infomation.h"
+#include "../messagebox/warning.h"
+//#include "../csv/csvexport.h"
+
 using namespace QtConcurrent;
-class Table : public QObject
+
+class Table:  public QObject
 {
     Q_OBJECT
 public:
@@ -34,26 +33,21 @@ public:
     struct TableSize { int row; int col;};
 
     explicit Table(QTableView*,int ,int ,QObject * parent = Q_NULLPTR);
-    explicit Table(QTableView* ,TableSize,QObject * parent = Q_NULLPTR);
+    explicit Table(QTableView*,TableSize,QObject * parent = Q_NULLPTR);
 
-    // 无论txt还是csv import 1万行轻微影响,10万行很卡; export 10万行不卡
-    void importTxt(); // 先拿到文本再导入表格
-    void exportTxt(); // 先拿到表格文本再导出
+    void importTxt(); // Get the text before importing the table
+    void importCsv();   // Import table while text loop
+    void importTable(QStringList& content); // should ≯ 10
 
-    void importCsv();   // 文本循环的同时导入表格
-    void exportCsv();  // 表格循环的同时导出文本
+    void exportTxt(); // Get the table text before exporting
+    void exportCsv();  // Export text while the table loops
 
-    void importTable(QStringList& content); // 完成importTxt/importCsv的实际工作
+    //void importCsvExternel();
+    //void exportCsvExternel();
 
-    // 调用csv/csvexport完成的
-    void importCsvExternel();// 1万行轻微影响,10万行很卡,内部是先拿到导入的文本再导入表格的
-    void exportCsvExternel(); // 1万行时就会很卡4.5s ,内部是文本循环一遍,然后再使用流导出
-
-    // 文本循环的同时导入表格,十万行比importTxt()和importCsv()稍快但提升不大
     void importTxtOptim();
     void importCsvOptim();
 
-    // 使用并行技术
     void importTableConcurrent(QStringList& content);
 
     void importTxtConcurrent();
@@ -106,7 +100,7 @@ private:
     QItemSelectionModel * mSelectionModel;
     QStandardItemModel * mStandardModel;
     TableSize mTableSize;
-    CSVExport  mCsvOpera;
+    //CSVExport  mCsvOpera;
     QColor mForeColor;
     QColor mBackColor;
 signals:

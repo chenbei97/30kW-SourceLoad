@@ -1,4 +1,7 @@
-#include "seriesbox.h"
+﻿#include "seriesbox.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 SeriesBox::SeriesBox(QChart *chart,QWidget*parent):
     QGroupBox(parent),mChart(chart),mCurrentSeriesId(0)

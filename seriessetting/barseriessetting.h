@@ -1,4 +1,4 @@
-#ifndef BARSERIESSETTING_H
+﻿#ifndef BARSERIESSETTING_H
 #define BARSERIESSETTING_H
 
 #include "seriessetting.h"
@@ -14,7 +14,6 @@ public:
 private:
     QChart * mChart;
     QBarSeries * mCurrentSeries;
-    //SeriesSetting * mGenericSetting; // 不要通用设置,因为直方图无需切换曲线
     SeriesInfo * mInfo;
     SeriesBar * mBar;
     SeriesBarSet * mBarSet;

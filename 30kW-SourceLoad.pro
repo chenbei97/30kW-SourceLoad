@@ -9,6 +9,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
+#QMAKE_CXXFLAGS += /utf-8
+
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -97,8 +99,8 @@ SOURCES += \
     communication/usbquery.cpp \
     communication/usbconfig.cpp \
     communication/tcpquery.cpp \
-    csv/csvexport.cpp \
-    csv/csvexport_py.cpp \
+#    csv/csvexport.cpp \
+#    csv/csvexport_py.cpp \
     log/log.cpp \
     log/logfixedprocessor.cpp \
     log/logmonitorprocessor.cpp \
@@ -225,8 +227,8 @@ HEADERS += \
     core/enum.h \
     core/list_files.h \
     core/spic_command.h \
-    csv/csvexport.h \
-    csv/csvexport_test.h \
+#    csv/csvexport.h \
+#    csv/csvexport_test.h \
     log/log.h \
     log/logfixedprocessor.h \
     log/logmonitorprocessor.h \
@@ -265,23 +267,23 @@ HEADERS += \
     table/table.h \
     table/tablecolordialog.h \
     table/tablesizedialog.h \
-    test/animation_test.h \
-    test/pytest_agreement_api.h \
-    test/pytest_agreement_test.h \
-    test/pytest_intro_api.h \
-    test/pytest_intro_test.h \
-    test/pytest_print.h \
-    test/pytest_print_test.h \
-    test/pytest_spec_datatype_api.h \
-    test/pytest_spec_funcobj_api.h \
-    test/pytest_spec_objlayer_test.h \
-    test/pytest_tool_api.h \
-    test/pytest_tool_test.h \
-    test/pytest_useful_macro_api.h \
-    test/pytest_useful_macro_test.h \
-    test/concurrent_test.h \
-    test/listfiles_test.h \
-    test/test.h \
+#    test/animation_test.h \
+#    test/pytest_agreement_api.h \
+#    test/pytest_agreement_test.h \
+#    test/pytest_intro_api.h \
+#    test/pytest_intro_test.h \
+#    test/pytest_print.h \
+#    test/pytest_print_test.h \
+#    test/pytest_spec_datatype_api.h \
+#    test/pytest_spec_funcobj_api.h \
+#    test/pytest_spec_objlayer_test.h \
+#    test/pytest_tool_api.h \
+#    test/pytest_tool_test.h \
+#    test/pytest_useful_macro_api.h \
+#    test/pytest_useful_macro_test.h \
+#    test/concurrent_test.h \
+#    test/listfiles_test.h \
+#    test/test.h \
     tool/chartview_tool.h \
     tool/tableview_tool.h \
     tool/tableviewmodel.h \
@@ -296,39 +298,25 @@ RESOURCES += \
                 images.qrc \
                 trans.qrc
 
-DISTFILES += \
-                log.txt \
-                test/test_function.py \
-                test/test_plot.py \
-                test/test_python.py \
-                test/test_class.py \
-                test/pytest.txt \
-                csv/csvexport.py
+#DISTFILES += \
+#                log.txt \
+#                test/test_function.py \
+#                test/test_plot.py \
+#                test/test_python.py \
+#                test/test_class.py \
+#                test/pytest.txt \
+#                csv/csvexport.py
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/ -lpython37
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/ -lpython37d
+#INCLUDEPATH += $$PWD/../../AppData/Local/Programs/Python/Python37-32/include
+#DEPENDPATH += $$PWD/../../AppData/Local/Programs/Python/Python37-32/include
 
-INCLUDEPATH += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs
-DEPENDPATH += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs
+#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/ -lpython37
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/ -lpython37d
 
-INCLUDEPATH += $$PWD/../../AppData/Local/Programs/Python/Python37-32/include
-DEPENDPATH += $$PWD/../../AppData/Local/Programs/Python/Python37-32/include
+#INCLUDEPATH += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs
+#DEPENDPATH += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/libpython37.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/libpython37d.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/python37.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/python37d.lib
-
-#win32:CONFIG(release, debug|release): LIBS += ./libs/ -lpython37
-#else:win32:CONFIG(debug, debug|release): LIBS += ./libs/ -lpython37d
-
-#INCLUDEPATH += ./libs
-#DEPENDPATH += ./libs
-
-#INCLUDEPATH += ./include
-#DEPENDPATH += ./include
-
-#win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += ./libs/libpython37.a
-#else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += ./libs/libpython37d.a
-#else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += ./libs/python37.lib
-#else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += ./libs/python37d.lib
+#win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/libpython37.a
+#else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/libpython37d.a
+#else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/python37.lib
+#else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../AppData/Local/Programs/Python/Python37-32/libs/python37d.lib

@@ -1,4 +1,4 @@
-#include "chartsetting.h"
+﻿#include "chartsetting.h"
 
 ChartSetting::ChartSetting(QChart* chart):mChart(chart)
 {
@@ -16,7 +16,7 @@ ChartSetting::ChartSetting(QChart* chart):mChart(chart)
     addWidget(mLegend);
     addWidget(mBackground);
     addWidget(mForeground);
-    addWidget(new QGroupBox);//为了防止挤压尾部留些空间
+    addWidget(new QGroupBox);
 }
 
 void ChartSetting::closeChildrenWindows()

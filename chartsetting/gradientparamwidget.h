@@ -1,4 +1,4 @@
-#ifndef GRADIENTPARAMWIDGET_H
+﻿#ifndef GRADIENTPARAMWIDGET_H
 #define GRADIENTPARAMWIDGET_H
 
 #include <QTextEdit>
@@ -35,7 +35,7 @@ private:
     QTextEdit* mGradientDescription;
     QRadioButton * mSelectColorBtn;
     QRadioButton * mSelectTextBtn;
-    QVector<QPair<qreal,QColor>> inputedColors(const QString&);//子类需要这个函数
+    QVector<QPair<qreal,QColor>> inputedColors(const QString&);
     QPair<qreal,QColor> takeStepColor(const QString&);
     bool checkStepColor(const QString&);
     bool checkStep(const QString&);
@@ -43,6 +43,6 @@ private:
     QList<int> takeRgb(const QString&,int = 3);
     bool checkRgb(const QString&);
 signals:
-    void gradientParams(QVector<QPair<qreal,QColor>>,QGradient::Type); // 3类共用
+    void gradientParams(QVector<QPair<qreal,QColor>>,QGradient::Type);
 };
 #endif // GRADIENTPARAMWIDGET_H

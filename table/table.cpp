@@ -1,4 +1,4 @@
-﻿#include <table/table.h>
+﻿#include "table.h"
 
 Table::Table(QTableView* tableview,int row, int col,QObject * parent) : QObject(parent)
 {

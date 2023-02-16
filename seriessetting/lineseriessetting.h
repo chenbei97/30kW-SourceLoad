@@ -1,4 +1,4 @@
-#ifndef LINESERIESSETTING_H
+﻿#ifndef LINESERIESSETTING_H
 #define LINESERIESSETTING_H
 
 #include "seriessetting.h"
@@ -12,8 +12,8 @@ public:
 private:
     QChart * mChart;
     QLineSeries * mCurrentSeries;
-    SeriesSetting * mGenericSetting; // 使用组合
-    SeriesXY * mXYSetting; // 折线图使用XY即可
+    SeriesSetting * mGenericSetting;
+    SeriesXY * mXYSetting;
 signals:
     void associateCompeleted();
     void seriesColorChanged(QLineSeries*);

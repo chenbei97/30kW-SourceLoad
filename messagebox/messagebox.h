@@ -1,4 +1,4 @@
-#ifndef MESSAGEBOX_H
+﻿#ifndef MESSAGEBOX_H
 #define MESSAGEBOX_H
 
 #include <QDialog>
@@ -9,19 +9,18 @@
 #include <QTextEdit>
 #include <QSplitter>
 #include <QPropertyAnimation>
-#include <QDebug>
-#include <messagebox/messagebutton.h>
-#include <messagebox/tip.h>
+#include "messagebutton.h"
+#include "tip.h"
 
 class Messagebox : public QDialog
 {
     Q_OBJECT
 private:
-    typedef void (Messagebox::*ButtonSlotClassFunc)(); //支持自己的类成员函数
-    void setSlotClassFunction(ButtonSlotClassFunc,int); //不被继承
+    typedef void (Messagebox::*ButtonSlotClassFunc)();
+    void setSlotClassFunction(ButtonSlotClassFunc,int);
 
 public:
-    typedef  void (*ButtonSlotFunc)();// 支持普通函数/静态成员函数,子类继承即可
+    typedef  void (*ButtonSlotFunc)();
     explicit Messagebox(QWidget*parent=Q_NULLPTR);
     virtual ~Messagebox();
 

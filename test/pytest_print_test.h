@@ -1,7 +1,12 @@
-#ifndef PYTEST_PRINT_TEST_H
+﻿#ifndef PYTEST_PRINT_TEST_H
 #define PYTEST_PRINT_TEST_H
+
 #include <QDebug>
 #include <Python.h>
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
+
 void print_pyobject(PyObject *py_obj);
 
 //把const char *c转 wchar_t * ，作为Py_SetPythonHome()参数匹配

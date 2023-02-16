@@ -1,11 +1,11 @@
-#ifndef CHARTVIEWWIDGET_H
+﻿#ifndef CHARTVIEWWIDGET_H
 #define CHARTVIEWWIDGET_H
 
 #include "../chart/linechart.h"
 #include "../chart/scatterchart.h"
 #include "../chart/barchart.h"
 #include "../chart/piechart.h"
-#include <QtConcurrent/QtConcurrent>
+#include <QtConcurrent>
 using namespace  QtConcurrent;
 
 class ChartViewWidget : public QWidget

@@ -1,4 +1,7 @@
-#include <table/tablecolordialog.h>
+﻿#include "tablecolordialog.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 TableColorDialog::TableColorDialog(const QPalette& palette,QWidget*parent):QDialog(parent)
 {

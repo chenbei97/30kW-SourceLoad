@@ -1,4 +1,7 @@
-#include "seriesscatter.h"
+﻿#include "seriesscatter.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 SeriesScatter::SeriesScatter(QChart * chart,QWidget* parent):
     QGroupBox(parent),mChart(chart),mCurrentSeries(nullptr),mCurrentSeriesId(0)

@@ -1,4 +1,4 @@
-#ifndef MONITOR_H
+﻿#ifndef MONITOR_H
 #define MONITOR_H
 
 #include <QMainWindow>
@@ -18,9 +18,9 @@
 #include <QDebug>
 #include <QPainter>
 #include <QPaintEvent>
-#include <monitor/monitor_label.h>
-#include <monitor/monitor_spinbox.h>
-#include <core/enum.h>
+#include "monitor_label.h"
+#include "monitor_spinbox.h"
+#include "../core/enum.h"
 
 class Monitor : public QMainWindow
 {

@@ -1,4 +1,7 @@
-#include <login/login.h>
+﻿#include "login.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 Login::Login(QWidget*parent ):QDialog(parent)
   , UserNameLabel(new QLabel(tr("用户名称："))), UserNameEdit(new QLineEdit)

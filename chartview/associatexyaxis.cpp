@@ -1,4 +1,7 @@
-#include "associatexyaxis.h"
+﻿#include "associatexyaxis.h"
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 
 AssociateXYAxis::AssociateXYAxis(QWidget*parent):QGroupBox(parent)
 {
