@@ -507,6 +507,7 @@ Qt5Cored.dll、Qt5Guid.dll、Qt5Networkd.dll、Qt5SerialPortd.dll、Qt5Widgetsd.
 	   release版本同理，使用对应的二进制目录进行打包
 	5) 可能遇见"VS+Qt5 运行报错: 找不到 Qt platform plugin windows"问题，这个是没有qwindows.dll的原因，
 	   可以复制这个dll然后再打包就不会出错,qwindows.dll是单独打开已有项目时构建会生成在debug&release/platforms文件夹下的，事先保存留好
+	   debug生成qwindowsd.dll，release生成qwindows.dll，注意要分别放进去
 	6) 注意添加文件之前，先对已有项目重新生成(但是不会生成qwindows.dll)，已有项目不会生成exe文件了，而是出现在Setup\x64下
 	   然后再把重新生成的obj文件添加进去，检查需要手动添加Qt5依赖
 	7）不管怎样，只要检查好Qt5依赖和qwindows.dll即可，如果都有，发布程序就不会有问题
