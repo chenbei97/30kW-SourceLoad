@@ -1,6 +1,0 @@
-#include "serial_variablesettingthread.h"
-
-SerialVariableSettingThread::SerialVariableSettingThread(QObject * parent):QObject(parent)
-{
-
-}
